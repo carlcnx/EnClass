@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 using System.IO;
 using log4net;
 using log4net.Config;
-using NClass.Translations;
-using NClass.Core;
+using EnClass.Translations;
+using EnClass.Core;
 
 
-namespace NClass.Common
+namespace EnClass.Common
 {
     public class App
     {
         // Log config file
-        private const string DefaultCfgLogFile = "NClass_log_cfg";
+        private const string DefaultCfgLogFile = "EnClass_log_cfg";
         private string config_log_file = string.Empty;
 
-        // Logger for the NClass program
+        // Logger for the EnClass program
         private static readonly ILog Logger = LogManager.GetLogger(typeof(App));
 
         public LanguageManager LngMg;
@@ -48,10 +48,10 @@ namespace NClass.Common
             // Load the log4net config file
             XmlConfigurator.Configure(new FileInfo(configFile));
 
-            Logger.Info("Start NClass Application.");
+            Logger.Info("Start EnClass Application.");
 
 
-            Logger.Info("End NClass Application.");
+            Logger.Info("End EnClass Application.");
         }
 
         public static string FileExist(int currentIndex, int length, string value, string arg)

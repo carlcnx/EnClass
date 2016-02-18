@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -19,11 +19,11 @@ using System.Xml;
 using System.Text;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using NClass.Core;
-using NClass.CSharp;
+using EnClass.Core;
+using EnClass.CSharp;
 using System.Text.RegularExpressions;
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
 	internal sealed class CSharpProjectGenerator : ProjectGenerator
 	{

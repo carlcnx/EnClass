@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -20,11 +20,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Windows.Forms;
 using CrashReporterDotNET;
-using NClass.Translations;
-using NClass.Common;
+using EnClass.Translations;
+using EnClass.Common;
 
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
 	internal static class Program
 	{
@@ -32,7 +32,7 @@ namespace NClass.GUI
 			Assembly.GetExecutingAssembly().GetName().Version;
 		public static readonly string AppDataDirectory =
 			Path.Combine(Environment.GetFolderPath(
-			Environment.SpecialFolder.LocalApplicationData), "NClass");
+			Environment.SpecialFolder.LocalApplicationData), "EnClass");
 
 		/// <summary>
 		/// The main entry point for the application.
@@ -121,11 +121,11 @@ namespace NClass.GUI
 		{
 			if (CurrentVersion.Minor == 0)
 			{
-				return string.Format("NClass {0}.0", CurrentVersion.Major);
+				return string.Format("EnClass {0}.0", CurrentVersion.Major);
 			}
 			else
 			{
-				return string.Format("NClass {0}.{1:00}",
+				return string.Format("EnClass {0}.{1:00}",
 					CurrentVersion.Major, CurrentVersion.Minor);
 			}
 		}

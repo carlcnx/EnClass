@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using NClass.AssemblyCSharpImport.Controls;
-using NClass.AssemblyCSharpImport.Lang;
-using NClass.AssemblyCSharpImport.Properties;
+using EnClass.AssemblyCSharpImport.Controls;
+using EnClass.AssemblyCSharpImport.Lang;
+using EnClass.AssemblyCSharpImport.Properties;
 using NReflect.Filter;
 using System.IO;
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
   /// <summary>
   /// A form to set up the ImportSettings.

@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2007 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -16,11 +16,11 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using NClass.DiagramEditor.Properties;
-using NClass.DiagramEditor.ClassDiagram.Connections;
-using NClass.Translations;
+using EnClass.DiagramEditor.Properties;
+using EnClass.DiagramEditor.ClassDiagram.Connections;
+using EnClass.Translations;
 
-namespace NClass.DiagramEditor.ClassDiagram.ContextMenus
+namespace EnClass.DiagramEditor.ClassDiagram.ContextMenus
 {
 	internal sealed class ConnectionContextMenu : DiagramContextMenu
 	{

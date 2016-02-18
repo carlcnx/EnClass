@@ -4,11 +4,11 @@ using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
-using NClass.AssemblyCSharpImport.Lang;
-using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram;
-using NClass.DiagramEditor.ClassDiagram.Connections;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using EnClass.AssemblyCSharpImport.Lang;
+using EnClass.Core;
+using EnClass.DiagramEditor.ClassDiagram;
+using EnClass.DiagramEditor.ClassDiagram.Connections;
+using EnClass.DiagramEditor.ClassDiagram.Shapes;
 using NReflect;
 using NReflect.Filter;
 using NReflect.NREntities;
@@ -17,7 +17,7 @@ using NReflect.NRParameters;
 using NReflect.NRCode;
 using NReflect.NRRelationship;
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
   public class NETImport
   {
@@ -45,7 +45,7 @@ namespace NClass.AssemblyCSharpImport
 
     /// <summary>
     /// A mapping from NReflects <see cref="NRTypeBase"/> objects to the
-    /// corresponding NClass <see cref="TypeBase"/> objects.
+    /// corresponding EnClass <see cref="TypeBase"/> objects.
     /// </summary>
     private readonly Dictionary<NRTypeBase, TypeBase> types;
 
@@ -108,11 +108,11 @@ namespace NClass.AssemblyCSharpImport
           filter = new InvertFilter(includeFilter);
         }
 
-        NClassImportFilter nClassImportFilter = new NClassImportFilter(filter);
+        EnClassImportFilter nClassImportFilter = new EnClassImportFilter(filter);
         Reflector reflector = new Reflector();
         filter = nClassImportFilter;
         NRAssembly nrAssembly = reflector.Reflect(fileName, ref filter);
-        nClassImportFilter = (NClassImportFilter)filter;
+        nClassImportFilter = (EnClassImportFilter)filter;
 
         AddInterfaces(nrAssembly.Interfaces);
         AddClasses(nrAssembly.Classes);
@@ -257,8 +257,8 @@ namespace NClass.AssemblyCSharpImport
       {
         ClassType classType = diagram.AddClass();
         classType.Name = nrClass.Name;
-        classType.AccessModifier = nrClass.AccessModifier.ToNClass();
-        classType.Modifier = nrClass.ClassModifier.ToNClass();
+        classType.AccessModifier = nrClass.AccessModifier.ToEnClass();
+        classType.Modifier = nrClass.ClassModifier.ToEnClass();
 
         AddFields(classType, nrClass.Fields);
         AddProperties(classType, nrClass.Properties);
@@ -281,7 +281,7 @@ namespace NClass.AssemblyCSharpImport
       {
         StructureType structureType = diagram.AddStructure();
         structureType.Name = nrStruct.Name;
-        structureType.AccessModifier = nrStruct.AccessModifier.ToNClass();
+        structureType.AccessModifier = nrStruct.AccessModifier.ToEnClass();
 
         AddFields(structureType, nrStruct.Fields);
         AddProperties(structureType, nrStruct.Properties);
@@ -304,7 +304,7 @@ namespace NClass.AssemblyCSharpImport
       {
         InterfaceType interfaceType = diagram.AddInterface();
         interfaceType.Name = nrInterface.Name;
-        interfaceType.AccessModifier = nrInterface.AccessModifier.ToNClass();
+        interfaceType.AccessModifier = nrInterface.AccessModifier.ToEnClass();
 
         AddProperties(interfaceType, nrInterface.Properties);
         AddEvents(interfaceType, nrInterface.Events);
@@ -324,7 +324,7 @@ namespace NClass.AssemblyCSharpImport
       {
         DelegateType delegateType = diagram.AddDelegate();
         delegateType.Name = nrDelegate.Name;
-        delegateType.AccessModifier = nrDelegate.AccessModifier.ToNClass();
+        delegateType.AccessModifier = nrDelegate.AccessModifier.ToEnClass();
         delegateType.ReturnType = nrDelegate.ReturnType.Name;
         foreach(NRParameter nrParameter in nrDelegate.Parameters)
         {
@@ -345,7 +345,7 @@ namespace NClass.AssemblyCSharpImport
       {
         EnumType enumType = diagram.AddEnum();
         enumType.Name = nrEnum.Name;
-        enumType.AccessModifier = nrEnum.AccessModifier.ToNClass();
+        enumType.AccessModifier = nrEnum.AccessModifier.ToEnClass();
 
         AddEnumValues(enumType, nrEnum.Values);
 

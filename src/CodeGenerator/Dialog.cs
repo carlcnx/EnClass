@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -17,12 +17,12 @@ using System;
 using System.IO;
 using System.Collections.Specialized;
 using System.Windows.Forms;
-using NClass.Core;
-using NClass.CSharp;
-using NClass.Java;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.CSharp;
+using EnClass.Java;
+using EnClass.Translations;
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
     public partial class Dialog : Form
     {

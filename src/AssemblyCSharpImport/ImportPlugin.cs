@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
-using NClass.AssemblyCSharpImport.Lang;
-using NClass.CSharp;
-using NClass.DiagramEditor.ClassDiagram;
-using NClass.GUI;
+using EnClass.AssemblyCSharpImport.Lang;
+using EnClass.CSharp;
+using EnClass.DiagramEditor.ClassDiagram;
+using EnClass.GUI;
 using System.IO;
 
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
     /// <summary>
-    ///   Implements the PlugIn-Interface of NClass.
+    ///   Implements the PlugIn-Interface of EnClass.
     /// </summary>
-    public class ImportPlugin : NClass.GUI.Plugin
+    public class ImportPlugin : EnClass.GUI.Plugin
     {
     // ========================================================================
     // Fields
@@ -39,7 +39,7 @@ namespace NClass.AssemblyCSharpImport
     {
       try
       {
-        Strings.Culture = CultureInfo.GetCultureInfo(NClass.GUI.Settings.Default.UILanguage);
+        Strings.Culture = CultureInfo.GetCultureInfo(EnClass.GUI.Settings.Default.UILanguage);
       }
       catch(ArgumentException)
       {
@@ -50,8 +50,8 @@ namespace NClass.AssemblyCSharpImport
     /// <summary>
     ///   Constructs a new instance of NETImportPlugin.
     /// </summary>
-    /// <param name = "environment">An instance of NClassEnvironment.</param>
-    public ImportPlugin(NClassEnvironment environment)
+    /// <param name = "environment">An instance of EnClassEnvironment.</param>
+    public ImportPlugin(EnClassEnvironment environment)
       : base(environment)
     {
       menuItem = new ToolStripMenuItem

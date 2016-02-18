@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NClass.DiagramEditor
+namespace EnClass.DiagramEditor
 {
 	partial class Canvas
 	{

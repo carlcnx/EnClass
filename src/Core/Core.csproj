@@ -8,8 +8,8 @@
     <ProjectGuid>{8CF10505-3C2E-4E45-AB90-21613237B412}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.Core</RootNamespace>
-    <AssemblyName>NClass.Core</AssemblyName>
+    <RootNamespace>EnClass.Core</RootNamespace>
+    <AssemblyName>EnClass.Core</AssemblyName>
     <StartupObject>
     </StartupObject>
     <FileUpgradeFlags>

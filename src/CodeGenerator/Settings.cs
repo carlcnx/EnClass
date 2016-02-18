@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -17,10 +17,10 @@ using System;
 using System.Configuration;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using NClass.Core;
+using EnClass.Core;
 using System.IO;
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
 	internal sealed partial class Settings
 	{
@@ -50,7 +50,7 @@ namespace NClass.CodeGenerator
 			if (string.IsNullOrEmpty(DestinationPath))
 			{
 				string myDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-				DestinationPath = Path.Combine(myDocuments, "NClass Generated Projects");
+				DestinationPath = Path.Combine(myDocuments, "EnClass Generated Projects");
 			}
 		}
 	}

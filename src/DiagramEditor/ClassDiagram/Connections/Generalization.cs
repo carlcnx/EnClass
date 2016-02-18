@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -16,10 +16,10 @@
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using EnClass.Core;
+using EnClass.DiagramEditor.ClassDiagram.Shapes;
 
-namespace NClass.DiagramEditor.ClassDiagram.Connections
+namespace EnClass.DiagramEditor.ClassDiagram.Connections
 {
 	internal sealed class Generalization : Connection
 	{

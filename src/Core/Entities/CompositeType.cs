@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -18,9 +18,9 @@ using System.IO;
 using System.Xml;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using NClass.Translations;
+using EnClass.Translations;
 
-namespace NClass.Core
+namespace EnClass.Core
 {
 	public abstract class CompositeType : TypeBase
 	{

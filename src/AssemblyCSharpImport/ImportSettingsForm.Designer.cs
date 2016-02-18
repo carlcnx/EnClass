@@ -1,6 +1,6 @@
-﻿using NClass.AssemblyCSharpImport.Controls;
+﻿using EnClass.AssemblyCSharpImport.Controls;
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
   partial class ImportSettingsForm
   {
@@ -57,8 +57,8 @@ namespace NClass.AssemblyCSharpImport
             this.openFileDialogAssemblies = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.dgvFilter = new System.Windows.Forms.DataGridView();
-            this.colFilterModifier = new NClass.AssemblyCSharpImport.Controls.DataGridViewImageComboBoxColumn();
-            this.colFilterElement = new NClass.AssemblyCSharpImport.Controls.DataGridViewImageComboBoxColumn();
+            this.colFilterModifier = new EnClass.AssemblyCSharpImport.Controls.DataGridViewImageComboBoxColumn();
+            this.colFilterElement = new EnClass.AssemblyCSharpImport.Controls.DataGridViewImageComboBoxColumn();
             this.chkNewDiagram = new System.Windows.Forms.CheckBox();
             this.grpTemplate.SuspendLayout();
             this.grpAggregations.SuspendLayout();

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Text;
-using NClass.DiagramEditor.ClassDiagram;
-using NClass.DiagramEditor.ClassDiagram.Connections;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using EnClass.DiagramEditor.ClassDiagram;
+using EnClass.DiagramEditor.ClassDiagram.Connections;
+using EnClass.DiagramEditor.ClassDiagram.Shapes;
 
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
     public static class Common
     {

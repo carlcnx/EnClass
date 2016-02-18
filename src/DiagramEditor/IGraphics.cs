@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2007 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -19,7 +19,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Drawing.Imaging;
 
-namespace NClass.DiagramEditor
+namespace EnClass.DiagramEditor
 {
 	public interface IGraphics
 	{

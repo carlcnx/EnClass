@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -17,10 +17,10 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using NClass.Core;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.Translations;
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
 	public class Workspace
 	{
@@ -217,7 +217,7 @@ namespace NClass.GUI
 				dialog.Filter = string.Format(
 					"{0} (*.ncp)|*.ncp|" +
 					"{1} (*.csd; *.jd)|*.csd;*.jd",
-					Strings.NClassProjectFiles,
+					Strings.EnClassProjectFiles,
 					Strings.PreviousFileFormats);
 
 				if (dialog.ShowDialog() == DialogResult.OK)
@@ -285,7 +285,7 @@ namespace NClass.GUI
 			{
 				dialog.FileName = project.Name;
 				dialog.InitialDirectory = project.GetProjectDirectory();
-				dialog.Filter = Strings.NClassProjectFiles + " (*.ncp)|*.ncp";
+				dialog.Filter = Strings.EnClassProjectFiles + " (*.ncp)|*.ncp";
 
 				if (dialog.ShowDialog() == DialogResult.OK)
 				{

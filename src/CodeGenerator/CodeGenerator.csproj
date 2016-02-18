@@ -8,8 +8,8 @@
     <ProjectGuid>{BE60D62D-E757-44F4-A342-5388742F5986}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.CodeGenerator</RootNamespace>
-    <AssemblyName>NClass.CodeGenerator</AssemblyName>
+    <RootNamespace>EnClass.CodeGenerator</RootNamespace>
+    <AssemblyName>EnClass.CodeGenerator</AssemblyName>
     <StartupObject>
     </StartupObject>
     <FileUpgradeFlags>

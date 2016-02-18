@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using NClass.Core;
-using NClass.CSharp;
-using NClass.AssemblyCSharpImport.Lang;
-using NClass.DiagramEditor.ClassDiagram;
+using EnClass.Core;
+using EnClass.CSharp;
+using EnClass.AssemblyCSharpImport.Lang;
+using EnClass.DiagramEditor.ClassDiagram;
 using ICSharpCode.NRefactory.CSharp;
 using ICSharpCode.NRefactory.CSharp.Resolver;
 
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
     class CSharpImport
     {
@@ -171,10 +171,10 @@ namespace NClass.AssemblyCSharpImport
         /// </summary>
         private void AddClass(TypeDeclaration classTp)
         {
-            NClass.Core.ClassType classType = diagram.AddClass();
+            EnClass.Core.ClassType classType = diagram.AddClass();
             classType.Name = classTp.Name;
-            classType.AccessModifier = classTp.Modifiers.ToNClass();
-            classType.Modifier = classTp.Modifiers.ToNClassFromClass();
+            classType.AccessModifier = classTp.Modifiers.ToEnClass();
+            classType.Modifier = classTp.Modifiers.ToEnClassFromClass();
 
             AddFields(classType, classTp);
             AddProperties(classType, classTp);
@@ -192,7 +192,7 @@ namespace NClass.AssemblyCSharpImport
         {
             StructureType structureType = diagram.AddStructure();
             structureType.Name = strctTp.Name;
-            structureType.AccessModifier = strctTp.Modifiers.ToNClass();
+            structureType.AccessModifier = strctTp.Modifiers.ToEnClass();
 
             AddFields(structureType, strctTp);
             AddProperties(structureType, strctTp);
@@ -210,7 +210,7 @@ namespace NClass.AssemblyCSharpImport
         {
             InterfaceType interfaceType = diagram.AddInterface();
             interfaceType.Name = interfaceTp.Name;
-            interfaceType.AccessModifier = interfaceTp.Modifiers.ToNClass();
+            interfaceType.AccessModifier = interfaceTp.Modifiers.ToEnClass();
 
             AddProperties(interfaceType, interfaceTp);
             AddEvents(interfaceType, interfaceTp);
@@ -224,7 +224,7 @@ namespace NClass.AssemblyCSharpImport
         {
             DelegateType delegateType = diagram.AddDelegate();
             delegateType.Name = dd.Name;
-            delegateType.AccessModifier = dd.Modifiers.ToNClass();
+            delegateType.AccessModifier = dd.Modifiers.ToEnClass();
             delegateType.ReturnType = dd.ReturnType.ToString();
 
             foreach (ParameterDeclaration ichParameter in dd.Parameters)
@@ -238,7 +238,7 @@ namespace NClass.AssemblyCSharpImport
         {
             EnumType enumType = diagram.AddEnum();
             enumType.Name = enumTp.Name;
-            enumType.AccessModifier = enumTp.Modifiers.ToNClass();
+            enumType.AccessModifier = enumTp.Modifiers.ToEnClass();
 
             AddEnumValues(enumType, enumType.Values);
         }
@@ -262,7 +262,7 @@ namespace NClass.AssemblyCSharpImport
                 Field fld = type.AddField();
 
                 fld.Name = variable.Name;
-                fld.AccessModifier = fp.Modifiers.ToNClass();
+                fld.AccessModifier = fp.Modifiers.ToEnClass();
                 fld.Type = fp.ReturnType.ToString();
                 fld.InitialValue = variable.LastChild.ToString();
             }
@@ -280,7 +280,7 @@ namespace NClass.AssemblyCSharpImport
                 Property prop = type.AddProperty();
 
                 prop.Name = pp.Name;
-                prop.AccessModifier = pp.Modifiers.ToNClass(); ;
+                prop.AccessModifier = pp.Modifiers.ToEnClass(); ;
                 prop.Type = pp.ReturnType.ToString();
             }
         }
@@ -301,7 +301,7 @@ namespace NClass.AssemblyCSharpImport
                 Event ev = type.AddEvent();
 
                 ev.Name = variable.Name;
-                ev.AccessModifier = ep.Modifiers.ToNClass();
+                ev.AccessModifier = ep.Modifiers.ToEnClass();
                 ev.Type = ep.ReturnType.ToString();
             }
         }
@@ -318,12 +318,12 @@ namespace NClass.AssemblyCSharpImport
                 Constructor cons = type.AddConstructor();
 
                 cons.Name = cp.Name;
-                cons.AccessModifier = cp.Modifiers.ToNClass();
+                cons.AccessModifier = cp.Modifiers.ToEnClass();
 
                 CSharpArgumentList Arg = new CSharpArgumentList();
 
                 foreach (ParameterDeclaration ichParameter in cp.Parameters)
-                    Arg.Add(ichParameter.Name, ichParameter.Type.ToString(), ichParameter.ParameterModifier.ToNClass(), ichParameter.DefaultExpression.ToString());
+                    Arg.Add(ichParameter.Name, ichParameter.Type.ToString(), ichParameter.ParameterModifier.ToEnClass(), ichParameter.DefaultExpression.ToString());
 
                 cons.ArgumentList = Arg;
             }
@@ -356,7 +356,7 @@ namespace NClass.AssemblyCSharpImport
                 method.Name = mp.Name;
 
                 method.Type = mp.ReturnType.ToString();
-                method.AccessModifier = mp.Modifiers.ToNClass();
+                method.AccessModifier = mp.Modifiers.ToEnClass();
 
                 CSharpArgumentList Arg = new CSharpArgumentList();
 
@@ -369,7 +369,7 @@ namespace NClass.AssemblyCSharpImport
                         defaultValue = defaultExpression.Value.ToString();
                     }
 
-                    Arg.Add(ichParameter.Name, ichParameter.Type.ToString(), ichParameter.ParameterModifier.ToNClass(), defaultValue);
+                    Arg.Add(ichParameter.Name, ichParameter.Type.ToString(), ichParameter.ParameterModifier.ToEnClass(), defaultValue);
                 }
 
                 method.ArgumentList = Arg;
@@ -387,12 +387,12 @@ namespace NClass.AssemblyCSharpImport
 
                 method.Name = op.Name;
                 method.Type = op.ReturnType.ToString();
-                method.AccessModifier = op.Modifiers.ToNClass();
+                method.AccessModifier = op.Modifiers.ToEnClass();
 
                 CSharpArgumentList Arg = new CSharpArgumentList();
 
                 foreach (ParameterDeclaration ichParameter in op.Parameters)
-                    Arg.Add(ichParameter.Name, ichParameter.Type.ToString(), ichParameter.ParameterModifier.ToNClass(), ichParameter.DefaultExpression.ToString());
+                    Arg.Add(ichParameter.Name, ichParameter.Type.ToString(), ichParameter.ParameterModifier.ToEnClass(), ichParameter.DefaultExpression.ToString());
 
                 method.ArgumentList = Arg;
             }

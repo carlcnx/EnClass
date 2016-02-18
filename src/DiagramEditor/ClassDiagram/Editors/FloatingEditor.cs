@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -17,10 +17,10 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
-using NClass.Core;
+using EnClass.DiagramEditor.ClassDiagram.Shapes;
+using EnClass.Core;
 
-namespace NClass.DiagramEditor.ClassDiagram.Editors
+namespace EnClass.DiagramEditor.ClassDiagram.Editors
 {
 	public abstract class FloatingEditor : EditorWindow
 	{

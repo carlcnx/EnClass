@@ -8,14 +8,14 @@ using NReflect.NRMembers;
 using NReflect.NRParameters;
 using NReflect.NRAttributes;
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
   /// <summary>
-  /// This import filter will filter out all entities and members NClass doesn't
+  /// This import filter will filter out all entities and members EnClass doesn't
   /// understand.
   /// </summary>
   [Serializable]
-  public class NClassImportFilter : IFilter
+  public class EnClassImportFilter : IFilter
   {
     // ========================================================================
     // Fields
@@ -35,10 +35,10 @@ namespace NClass.AssemblyCSharpImport
     #region === Con- / Destruction
 
     /// <summary>
-    /// Initializes a new instance of <see cref="NClassImportFilter"/>.
+    /// Initializes a new instance of <see cref="EnClassImportFilter"/>.
     /// </summary>
     /// <param name="filter">The filter to delegate filter calls to.</param>
-    public NClassImportFilter(IFilter filter)
+    public EnClassImportFilter(IFilter filter)
     {
       this.filter = filter;
       UnsafeTypesPresent = false;

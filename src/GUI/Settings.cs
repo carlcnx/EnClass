@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -17,10 +17,10 @@ using System.IO;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Configuration;
-using NClass.Core;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.Translations;
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
 	public sealed partial class Settings
 	{

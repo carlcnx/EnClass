@@ -25,7 +25,7 @@
 	- [A finir] Gestion de paramètre en ligne de commande 
 	- [A finir] Gestion d'un mode batch 
 		- un fichier de log
-			    - implémenter log4net dans tous les codes sours NClass
+			    - implémenter log4net dans tous les codes sours EnClass
 				  http://lutecefalco.developpez.com/tutoriels/dotnet/log4net/introduction/#LI.2
 		- [A tester ]une fenêtre listant les erreurs
 		  http://jeffbelback.me/posts/2010/12/15/OldBlog/Log4Net-WinForm-Appender/

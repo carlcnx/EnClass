@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-//using NClass.CodeGenerator.Templates;
+//using EnClass.CodeGenerator.Templates;
 using ICSharpCode.NRefactory.CSharp;
 using NStub.CSharp;
 using System.Windows.Forms;
-using NClass.Core;
+using EnClass.Core;
 
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
     public enum FormatStyleEnum
     {

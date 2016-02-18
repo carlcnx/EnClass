@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -16,10 +16,10 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using NClass.Core;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.Translations;
 
-namespace NClass.DiagramEditor.ClassDiagram.Dialogs
+namespace EnClass.DiagramEditor.ClassDiagram.Dialogs
 {
 	public partial class ImplementDialog : TreeDialog
 	{

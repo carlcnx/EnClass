@@ -1,4 +1,4 @@
-﻿namespace NClass.GUI.Dialogs
+﻿namespace EnClass.GUI.Dialogs
 {
 	partial class AboutDialog
 	{
@@ -47,7 +47,7 @@
 			this.lblTitle.Name = "lblTitle";
 			this.lblTitle.Size = new System.Drawing.Size(240, 44);
 			this.lblTitle.TabIndex = 8;
-			this.lblTitle.Text = "NClass vX.X";
+			this.lblTitle.Text = "EnClass vX.X";
 			this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// btnClose
@@ -108,7 +108,7 @@
 			// 
 			// picEmail
 			// 
-			this.picEmail.Image = global::NClass.GUI.Properties.Resources.Mail;
+			this.picEmail.Image = global::EnClass.GUI.Properties.Resources.Mail;
 			this.picEmail.Location = new System.Drawing.Point(14, 85);
 			this.picEmail.Name = "picEmail";
 			this.picEmail.Size = new System.Drawing.Size(32, 32);
@@ -117,7 +117,7 @@
 			// 
 			// picHomepage
 			// 
-			this.picHomepage.Image = global::NClass.GUI.Properties.Resources.Web;
+			this.picHomepage.Image = global::EnClass.GUI.Properties.Resources.Web;
 			this.picHomepage.Location = new System.Drawing.Point(15, 127);
 			this.picHomepage.Name = "picHomepage";
 			this.picHomepage.Size = new System.Drawing.Size(30, 30);
@@ -167,7 +167,7 @@
 			this.Name = "AboutDialog";
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "About NClass";
+			this.Text = "About EnClass";
 			((System.ComponentModel.ISupportInitialize) (this.picEmail)).EndInit();
 			((System.ComponentModel.ISupportInitialize) (this.picHomepage)).EndInit();
 			this.ResumeLayout(false);

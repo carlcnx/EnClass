@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -18,9 +18,9 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
-using NClass.Translations;
+using EnClass.Translations;
 
-namespace NClass.Core
+namespace EnClass.Core
 {
 	public sealed class Project : IModifiable
 	{
@@ -299,9 +299,9 @@ namespace NClass.Core
 			Project project = new Project();
 			project.loading = true;
 
-			Assembly assembly = Assembly.Load("NClass.DiagramEditor");
+			Assembly assembly = Assembly.Load("EnClass.DiagramEditor");
 			IProjectItem projectItem = (IProjectItem) assembly.CreateInstance(
-				"NClass.DiagramEditor.ClassDiagram.Diagram", false,
+				"EnClass.DiagramEditor.ClassDiagram.Diagram", false,
 				BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic,
 				null, null, null, null);
 

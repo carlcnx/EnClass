@@ -1,4 +1,4 @@
-﻿namespace NClass.DiagramEditor.ClassDiagram.Editors
+﻿namespace EnClass.DiagramEditor.ClassDiagram.Editors
 {
 	partial class ItemEditor
 	{
@@ -34,7 +34,7 @@
 			this.toolMoveDown = new System.Windows.Forms.ToolStripButton();
 			this.toolMoveUp = new System.Windows.Forms.ToolStripButton();
 			this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-			this.txtDeclaration = new NClass.DiagramEditor.ClassDiagram.Editors.BorderedTextBox();
+			this.txtDeclaration = new EnClass.DiagramEditor.ClassDiagram.Editors.BorderedTextBox();
 			this.toolStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize) (this.errorProvider)).BeginInit();
 			this.SuspendLayout();
@@ -58,7 +58,7 @@
 			// 
 			this.toolDelete.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolDelete.Image = global::NClass.DiagramEditor.Properties.Resources.Delete;
+			this.toolDelete.Image = global::EnClass.DiagramEditor.Properties.Resources.Delete;
 			this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolDelete.Name = "toolDelete";
 			this.toolDelete.Size = new System.Drawing.Size(23, 25);
@@ -70,7 +70,7 @@
 			// 
 			this.toolMoveDown.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolMoveDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolMoveDown.Image = global::NClass.DiagramEditor.Properties.Resources.MoveDown;
+			this.toolMoveDown.Image = global::EnClass.DiagramEditor.Properties.Resources.MoveDown;
 			this.toolMoveDown.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolMoveDown.Name = "toolMoveDown";
 			this.toolMoveDown.Size = new System.Drawing.Size(23, 25);
@@ -82,7 +82,7 @@
 			// 
 			this.toolMoveUp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolMoveUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolMoveUp.Image = global::NClass.DiagramEditor.Properties.Resources.MoveUp;
+			this.toolMoveUp.Image = global::EnClass.DiagramEditor.Properties.Resources.MoveUp;
 			this.toolMoveUp.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolMoveUp.Name = "toolMoveUp";
 			this.toolMoveUp.Size = new System.Drawing.Size(23, 25);

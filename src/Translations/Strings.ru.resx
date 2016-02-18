@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutNClass" xml:space="preserve">
-    <value>О NClass</value>
+  <data name="AboutEnClass" xml:space="preserve">
+    <value>О EnClass</value>
   </data>
   <data name="ChangingToAbstractConfirmation" xml:space="preserve">
     <value>При изменении модификатора наследования на abstract родительский клас тоже станет абстрактным. Вы желаете продолжить?</value>
@@ -503,7 +503,7 @@
     <value>Члены {0}</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
-    <value>&amp;О NClass...</value>
+    <value>&amp;О EnClass...</value>
   </data>
   <data name="MenuAddNew" xml:space="preserve">
     <value>&amp;Создать</value>
@@ -943,8 +943,8 @@
   <data name="MenuZoomOut" xml:space="preserve">
     <value>У&amp;меньшить масштаб</value>
   </data>
-  <data name="NClassProjectFiles" xml:space="preserve">
-    <value>Файлы проектов NClass</value>
+  <data name="EnClassProjectFiles" xml:space="preserve">
+    <value>Файлы проектов EnClass</value>
   </data>
   <data name="ErrorBlankFilename" xml:space="preserve">
     <value>Имя файла не может быть пустым</value>

@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -15,9 +15,9 @@
 
 using System;
 using System.Windows.Forms;
-using NClass.Translations;
+using EnClass.Translations;
 
-namespace NClass.GUI.Dialogs
+namespace EnClass.GUI.Dialogs
 {
 	public partial class AboutDialog : Form
 	{
@@ -28,7 +28,7 @@ namespace NClass.GUI.Dialogs
 
 		private void UpdateTexts()
 		{
-			this.Text = Strings.AboutNClass;
+			this.Text = Strings.AboutEnClass;
 			lblTitle.Text = Program.GetVersionString();
 			lblCopyright.Text = "Copyright (C) 2006-2009 " + Strings.Author;
 			lblStatus.Text = string.Format(Strings.BetaVersion);
@@ -40,7 +40,7 @@ namespace NClass.GUI.Dialogs
 			lnkEmail.Links.Clear();
 			lnkHomepage.Links.Add(0, lnkHomepage.Text.Length, Properties.Resources.WebAddress);
 			lnkEmail.Links.Add(0, lnkEmail.Text.Length,
-				"mailto:" + Properties.Resources.MailAddress + "?subject=NClass");
+				"mailto:" + Properties.Resources.MailAddress + "?subject=EnClass");
 			lblTranslator.Text = Strings.Translator;
 		}
 

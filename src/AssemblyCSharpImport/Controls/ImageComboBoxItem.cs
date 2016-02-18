@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace NClass.AssemblyCSharpImport.Controls
+namespace EnClass.AssemblyCSharpImport.Controls
 {
   /// <summary>
   ///   Represents an item of a <see cref = "ImageComboBox" />.

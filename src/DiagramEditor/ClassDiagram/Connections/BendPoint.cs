@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -16,9 +16,9 @@
 using System;
 using System.Xml;
 using System.Drawing;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
+using EnClass.DiagramEditor.ClassDiagram.Shapes;
 
-namespace NClass.DiagramEditor.ClassDiagram.Connections
+namespace EnClass.DiagramEditor.ClassDiagram.Connections
 {
 	public sealed class BendPoint
 	{

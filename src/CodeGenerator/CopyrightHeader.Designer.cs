@@ -1,4 +1,4 @@
-﻿namespace NClass.CodeGenerator
+﻿namespace EnClass.CodeGenerator
 {
     partial class CopyrightHeader
     {
@@ -68,7 +68,7 @@
             this.rtbCopyrightHeader.Name = "rtbCopyrightHeader";
             this.rtbCopyrightHeader.Size = new System.Drawing.Size(376, 300);
             this.rtbCopyrightHeader.TabIndex = 25;
-            this.rtbCopyrightHeader.Text = global::NClass.CodeGenerator.Settings.Default.CopyrightHeader;
+            this.rtbCopyrightHeader.Text = global::EnClass.CodeGenerator.Settings.Default.CopyrightHeader;
             // 
             // tbCompagnyName
             // 
@@ -76,7 +76,7 @@
             this.tbCompagnyName.Name = "tbCompagnyName";
             this.tbCompagnyName.Size = new System.Drawing.Size(279, 20);
             this.tbCompagnyName.TabIndex = 26;
-            this.tbCompagnyName.Text = global::NClass.CodeGenerator.Settings.Default.CompagnyName;
+            this.tbCompagnyName.Text = global::EnClass.CodeGenerator.Settings.Default.CompagnyName;
             // 
             // tbAuthor
             // 
@@ -84,7 +84,7 @@
             this.tbAuthor.Name = "tbAuthor";
             this.tbAuthor.Size = new System.Drawing.Size(279, 20);
             this.tbAuthor.TabIndex = 27;
-            this.tbAuthor.Text = global::NClass.CodeGenerator.Settings.Default.Author;
+            this.tbAuthor.Text = global::EnClass.CodeGenerator.Settings.Default.Author;
             // 
             // lblCompagnyName
             // 

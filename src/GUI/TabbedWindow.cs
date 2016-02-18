@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using NClass.DiagramEditor;
+using EnClass.DiagramEditor;
 using System.ComponentModel;
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
 	public partial class TabbedWindow : UserControl
 	{

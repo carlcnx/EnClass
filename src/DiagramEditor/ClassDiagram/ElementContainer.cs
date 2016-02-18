@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -16,11 +16,11 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
-using NClass.DiagramEditor.ClassDiagram.Connections;
+using EnClass.Core;
+using EnClass.DiagramEditor.ClassDiagram.Shapes;
+using EnClass.DiagramEditor.ClassDiagram.Connections;
 
-namespace NClass.DiagramEditor.ClassDiagram
+namespace EnClass.DiagramEditor.ClassDiagram
 {
 	internal class ElementContainer : IClipboardItem
 	{

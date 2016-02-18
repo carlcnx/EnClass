@@ -1,4 +1,4 @@
-﻿namespace NClass.DiagramEditor.ClassDiagram.Dialogs
+﻿namespace EnClass.DiagramEditor.ClassDiagram.Dialogs
 {
 	partial class EditCommentDialog
 	{

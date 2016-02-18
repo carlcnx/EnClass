@@ -83,9 +83,9 @@ namespace PDFExport.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NClass {
+        internal static System.Drawing.Bitmap EnClass {
             get {
-                object obj = ResourceManager.GetObject("NClass", resourceCulture);
+                object obj = ResourceManager.GetObject("EnClass", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

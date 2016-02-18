@@ -8,8 +8,8 @@
     <ProjectGuid>{255565B1-3246-4184-9F71-19178FE0BA65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.Java</RootNamespace>
-    <AssemblyName>NClass.Java</AssemblyName>
+    <RootNamespace>EnClass.Java</RootNamespace>
+    <AssemblyName>EnClass.Java</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

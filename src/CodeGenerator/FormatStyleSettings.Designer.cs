@@ -1,4 +1,4 @@
-﻿namespace NClass.CodeGenerator
+﻿namespace EnClass.CodeGenerator
 {
     partial class FormatStyleSettings
     {

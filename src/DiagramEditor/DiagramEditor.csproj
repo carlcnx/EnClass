@@ -8,8 +8,8 @@
     <ProjectGuid>{F52A7548-E60A-485B-9C84-1D2871416DB7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.DiagramEditor</RootNamespace>
-    <AssemblyName>NClass.DiagramEditor</AssemblyName>
+    <RootNamespace>EnClass.DiagramEditor</RootNamespace>
+    <AssemblyName>EnClass.DiagramEditor</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -128,9 +128,7 @@
     <Compile Include="ClassDiagram\Dialogs\OverrideDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClassDiagram\Dialogs\DiagramPrintDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="ClassDiagram\Dialogs\DiagramPrintDialog.cs" />
     <Compile Include="ClassDiagram\Dialogs\DiagramPrintDialog.Designer.cs">
       <DependentUpon>DiagramPrintDialog.cs</DependentUpon>
     </Compile>

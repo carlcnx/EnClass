@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -15,9 +15,9 @@
 
 using System;
 using System.Windows.Forms;
-using NClass.Translations;
+using EnClass.Translations;
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
 	public abstract class SimplePlugin : Plugin
 	{
@@ -26,7 +26,7 @@ namespace NClass.GUI
 		/// <exception cref="ArgumentNullException">
 		/// <paramref name="environment"/> is null.
 		/// </exception>
-		protected SimplePlugin(NClassEnvironment environment) : base(environment)
+		protected SimplePlugin(EnClassEnvironment environment) : base(environment)
 		{
 			menuItem = new ToolStripMenuItem();
 			menuItem.Text = MenuText;

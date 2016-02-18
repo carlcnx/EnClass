@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using NClass.DiagramEditor;
+using EnClass.DiagramEditor;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using PDFExport.Lang;

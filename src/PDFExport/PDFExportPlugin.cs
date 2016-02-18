@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using NClass.GUI;
+using EnClass.GUI;
 using PDFExport.Properties;
 using PdfSharp.Drawing;
 using Strings = PDFExport.Lang.Strings;
@@ -13,7 +13,7 @@ namespace PDFExport
   /// <summary>
   /// A plugin to export a diagram to a pdf.
   /// </summary>
-  public class PDFExportPlugin : NClass.GUI.Plugin
+  public class PDFExportPlugin : EnClass.GUI.Plugin
     {
     // ========================================================================
     // Attributes
@@ -39,7 +39,7 @@ namespace PDFExport
     {
       try
       {
-        Strings.Culture = CultureInfo.GetCultureInfo(NClass.GUI.Settings.Default.UILanguage);
+        Strings.Culture = CultureInfo.GetCultureInfo(EnClass.GUI.Settings.Default.UILanguage);
       }
       catch(ArgumentException)
       {
@@ -50,8 +50,8 @@ namespace PDFExport
     /// <summary>
     /// Constructs a new instance of PDFExportPlugin.
     /// </summary>
-    /// <param name="environment">An instance of NClassEnvironment.</param>
-    public PDFExportPlugin(NClassEnvironment environment)
+    /// <param name="environment">An instance of EnClassEnvironment.</param>
+    public PDFExportPlugin(EnClassEnvironment environment)
       : base(environment)
     {
       menuItem = new ToolStripMenuItem
@@ -151,7 +151,7 @@ namespace PDFExport
       exporter.Export();
 
       // Running the exporter within an extra thread isn't a good idea since
-      // the exporter uses GDI+. NClass uses GDI+ also if it has to redraw the
+      // the exporter uses GDI+. EnClass uses GDI+ also if it has to redraw the
       // diagram. GDI+ can't be used by two threads at the same time.
       //Thread exportThread = new Thread(exporter.Export)
       //                        {

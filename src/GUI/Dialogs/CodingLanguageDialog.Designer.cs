@@ -1,4 +1,4 @@
-﻿namespace NClass.GUI.Dialogs
+﻿namespace EnClass.GUI.Dialogs
 {
     partial class CodingLanguageDialog
     {

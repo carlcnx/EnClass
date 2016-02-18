@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
 	sealed partial class MainForm
 	{
@@ -122,10 +122,10 @@ namespace NClass.GUI
             this.toolZoomOut = new System.Windows.Forms.ToolStripButton();
             this.toolZoomIn = new System.Windows.Forms.ToolStripButton();
             this.toolAutoZoom = new System.Windows.Forms.ToolStripButton();
-            this.tabbedWindow = new NClass.GUI.TabbedWindow();
-            this.modelExplorer = new NClass.GUI.ModelExplorer.ModelView();
-            this.diagramNavigator = new NClass.GUI.DiagramNavigator();
-            this.toolZoom = new NClass.GUI.ZoomingToolStrip();
+            this.tabbedWindow = new EnClass.GUI.TabbedWindow();
+            this.modelExplorer = new EnClass.GUI.ModelExplorer.ModelView();
+            this.diagramNavigator = new EnClass.GUI.DiagramNavigator();
+            this.toolZoom = new EnClass.GUI.ZoomingToolStrip();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
             this.toolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -286,7 +286,7 @@ namespace NClass.GUI
             this.mnuNewProject,
             this.mnuSepProject,
             this.mnuNewCodingLanguageDiagram});
-            this.mnuNew.Image = global::NClass.GUI.Properties.Resources.NewDocument;
+            this.mnuNew.Image = global::EnClass.GUI.Properties.Resources.NewDocument;
             this.mnuNew.Name = "mnuNew";
             this.mnuNew.Size = new System.Drawing.Size(165, 22);
             this.mnuNew.Text = "&New";
@@ -294,7 +294,7 @@ namespace NClass.GUI
             // 
             // mnuNewProject
             // 
-            this.mnuNewProject.Image = global::NClass.GUI.Properties.Resources.Project;
+            this.mnuNewProject.Image = global::EnClass.GUI.Properties.Resources.Project;
             this.mnuNewProject.Name = "mnuNewProject";
             this.mnuNewProject.Size = new System.Drawing.Size(143, 22);
             this.mnuNewProject.Text = "Project";
@@ -322,7 +322,7 @@ namespace NClass.GUI
             this.mnuRecentFile3,
             this.mnuRecentFile4,
             this.mnuRecentFile5});
-            this.mnuOpen.Image = global::NClass.GUI.Properties.Resources.Open;
+            this.mnuOpen.Image = global::EnClass.GUI.Properties.Resources.Open;
             this.mnuOpen.Name = "mnuOpen";
             this.mnuOpen.Size = new System.Drawing.Size(165, 22);
             this.mnuOpen.Text = "&Open";
@@ -388,7 +388,7 @@ namespace NClass.GUI
             // 
             // mnuSave
             // 
-            this.mnuSave.Image = global::NClass.GUI.Properties.Resources.Save;
+            this.mnuSave.Image = global::EnClass.GUI.Properties.Resources.Save;
             this.mnuSave.Name = "mnuSave";
             this.mnuSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.mnuSave.Size = new System.Drawing.Size(165, 22);
@@ -404,7 +404,7 @@ namespace NClass.GUI
             // 
             // mnuSaveAll
             // 
-            this.mnuSaveAll.Image = global::NClass.GUI.Properties.Resources.SaveAll;
+            this.mnuSaveAll.Image = global::EnClass.GUI.Properties.Resources.SaveAll;
             this.mnuSaveAll.Name = "mnuSaveAll";
             this.mnuSaveAll.Size = new System.Drawing.Size(165, 22);
             this.mnuSaveAll.Text = "Save A&ll Projects";
@@ -417,7 +417,7 @@ namespace NClass.GUI
             // 
             // mnuPrint
             // 
-            this.mnuPrint.Image = global::NClass.GUI.Properties.Resources.Print;
+            this.mnuPrint.Image = global::EnClass.GUI.Properties.Resources.Print;
             this.mnuPrint.Name = "mnuPrint";
             this.mnuPrint.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.mnuPrint.Size = new System.Drawing.Size(165, 22);
@@ -475,7 +475,7 @@ namespace NClass.GUI
             // 
             // mnuUndo
             // 
-            this.mnuUndo.Image = global::NClass.GUI.Properties.Resources.Undo;
+            this.mnuUndo.Image = global::EnClass.GUI.Properties.Resources.Undo;
             this.mnuUndo.Name = "mnuUndo";
             this.mnuUndo.ShortcutKeyDisplayString = "Ctrl+Z";
             this.mnuUndo.Size = new System.Drawing.Size(164, 22);
@@ -485,7 +485,7 @@ namespace NClass.GUI
             // 
             // mnuRedo
             // 
-            this.mnuRedo.Image = global::NClass.GUI.Properties.Resources.Redo;
+            this.mnuRedo.Image = global::EnClass.GUI.Properties.Resources.Redo;
             this.mnuRedo.Name = "mnuRedo";
             this.mnuRedo.ShortcutKeyDisplayString = "Ctrl+Y";
             this.mnuRedo.Size = new System.Drawing.Size(164, 22);
@@ -501,7 +501,7 @@ namespace NClass.GUI
             // 
             // mnuCut
             // 
-            this.mnuCut.Image = global::NClass.GUI.Properties.Resources.Cut;
+            this.mnuCut.Image = global::EnClass.GUI.Properties.Resources.Cut;
             this.mnuCut.Name = "mnuCut";
             this.mnuCut.ShortcutKeyDisplayString = "Ctrl+X";
             this.mnuCut.Size = new System.Drawing.Size(164, 22);
@@ -510,7 +510,7 @@ namespace NClass.GUI
             // 
             // mnuCopy
             // 
-            this.mnuCopy.Image = global::NClass.GUI.Properties.Resources.Copy;
+            this.mnuCopy.Image = global::EnClass.GUI.Properties.Resources.Copy;
             this.mnuCopy.Name = "mnuCopy";
             this.mnuCopy.ShortcutKeyDisplayString = "Ctrl+C";
             this.mnuCopy.Size = new System.Drawing.Size(164, 22);
@@ -519,7 +519,7 @@ namespace NClass.GUI
             // 
             // mnuPaste
             // 
-            this.mnuPaste.Image = global::NClass.GUI.Properties.Resources.Paste;
+            this.mnuPaste.Image = global::EnClass.GUI.Properties.Resources.Paste;
             this.mnuPaste.Name = "mnuPaste";
             this.mnuPaste.ShortcutKeyDisplayString = "Ctrl+V";
             this.mnuPaste.Size = new System.Drawing.Size(164, 22);
@@ -528,7 +528,7 @@ namespace NClass.GUI
             // 
             // mnuDelete
             // 
-            this.mnuDelete.Image = global::NClass.GUI.Properties.Resources.Delete;
+            this.mnuDelete.Image = global::EnClass.GUI.Properties.Resources.Delete;
             this.mnuDelete.Name = "mnuDelete";
             this.mnuDelete.ShortcutKeyDisplayString = "Del";
             this.mnuDelete.Size = new System.Drawing.Size(164, 22);
@@ -578,7 +578,7 @@ namespace NClass.GUI
             this.mnuZoom150,
             this.mnuZoom200,
             this.mnuZoom400});
-            this.mnuZoom.Image = global::NClass.GUI.Properties.Resources.Zoom;
+            this.mnuZoom.Image = global::EnClass.GUI.Properties.Resources.Zoom;
             this.mnuZoom.Name = "mnuZoom";
             this.mnuZoom.Size = new System.Drawing.Size(180, 22);
             this.mnuZoom.Text = "&Zoom";
@@ -611,7 +611,7 @@ namespace NClass.GUI
             // 
             // mnuZoom100
             // 
-            this.mnuZoom100.Image = global::NClass.GUI.Properties.Resources.ActualSize;
+            this.mnuZoom100.Image = global::EnClass.GUI.Properties.Resources.ActualSize;
             this.mnuZoom100.Name = "mnuZoom100";
             this.mnuZoom100.Size = new System.Drawing.Size(102, 22);
             this.mnuZoom100.Text = "100%";
@@ -645,7 +645,7 @@ namespace NClass.GUI
             // 
             // mnuAutoZoom
             // 
-            this.mnuAutoZoom.Image = global::NClass.GUI.Properties.Resources.AutoZoom;
+            this.mnuAutoZoom.Image = global::EnClass.GUI.Properties.Resources.AutoZoom;
             this.mnuAutoZoom.Name = "mnuAutoZoom";
             this.mnuAutoZoom.Size = new System.Drawing.Size(180, 22);
             this.mnuAutoZoom.Text = "&Auto Zoom";
@@ -695,7 +695,7 @@ namespace NClass.GUI
             // 
             // mnuOptions
             // 
-            this.mnuOptions.Image = global::NClass.GUI.Properties.Resources.Options;
+            this.mnuOptions.Image = global::EnClass.GUI.Properties.Resources.Options;
             this.mnuOptions.Name = "mnuOptions";
             this.mnuOptions.Size = new System.Drawing.Size(180, 22);
             this.mnuOptions.Text = "&Options...";
@@ -722,7 +722,7 @@ namespace NClass.GUI
             // 
             // mnuContents
             // 
-            this.mnuContents.Image = global::NClass.GUI.Properties.Resources.Help;
+            this.mnuContents.Image = global::EnClass.GUI.Properties.Resources.Help;
             this.mnuContents.Name = "mnuContents";
             this.mnuContents.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.mnuContents.Size = new System.Drawing.Size(171, 22);
@@ -732,7 +732,7 @@ namespace NClass.GUI
             // 
             // mnuCheckForUpdates
             // 
-            this.mnuCheckForUpdates.Image = global::NClass.GUI.Properties.Resources.SearchWeb;
+            this.mnuCheckForUpdates.Image = global::EnClass.GUI.Properties.Resources.SearchWeb;
             this.mnuCheckForUpdates.Name = "mnuCheckForUpdates";
             this.mnuCheckForUpdates.Size = new System.Drawing.Size(171, 22);
             this.mnuCheckForUpdates.Text = "Check for &Updates";
@@ -747,7 +747,7 @@ namespace NClass.GUI
             // 
             this.mnuAbout.Name = "mnuAbout";
             this.mnuAbout.Size = new System.Drawing.Size(171, 22);
-            this.mnuAbout.Text = "&About NClass...";
+            this.mnuAbout.Text = "&About EnClass...";
             this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
             // standardToolStrip
@@ -784,7 +784,7 @@ namespace NClass.GUI
             this.toolNewProject,
             this.toolSepProject,
             this.toolNewCodingLanguageDiagram});
-            this.toolNew.Image = global::NClass.GUI.Properties.Resources.NewDocument;
+            this.toolNew.Image = global::EnClass.GUI.Properties.Resources.NewDocument;
             this.toolNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolNew.Name = "toolNew";
             this.toolNew.Size = new System.Drawing.Size(29, 22);
@@ -792,7 +792,7 @@ namespace NClass.GUI
             // 
             // toolNewProject
             // 
-            this.toolNewProject.Image = global::NClass.GUI.Properties.Resources.Project;
+            this.toolNewProject.Image = global::EnClass.GUI.Properties.Resources.Project;
             this.toolNewProject.Name = "toolNewProject";
             this.toolNewProject.Size = new System.Drawing.Size(143, 22);
             this.toolNewProject.Text = "Project";
@@ -820,7 +820,7 @@ namespace NClass.GUI
             this.toolRecentFile3,
             this.toolRecentFile4,
             this.toolRecentFile5});
-            this.toolOpen.Image = global::NClass.GUI.Properties.Resources.Open;
+            this.toolOpen.Image = global::EnClass.GUI.Properties.Resources.Open;
             this.toolOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolOpen.Name = "toolOpen";
             this.toolOpen.Size = new System.Drawing.Size(32, 22);
@@ -871,7 +871,7 @@ namespace NClass.GUI
             // 
             this.toolSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolSave.Enabled = false;
-            this.toolSave.Image = global::NClass.GUI.Properties.Resources.Save;
+            this.toolSave.Image = global::EnClass.GUI.Properties.Resources.Save;
             this.toolSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolSave.Name = "toolSave";
             this.toolSave.Size = new System.Drawing.Size(23, 22);
@@ -881,7 +881,7 @@ namespace NClass.GUI
             // 
             this.toolPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolPrint.Enabled = false;
-            this.toolPrint.Image = global::NClass.GUI.Properties.Resources.Print;
+            this.toolPrint.Image = global::EnClass.GUI.Properties.Resources.Print;
             this.toolPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolPrint.Name = "toolPrint";
             this.toolPrint.Size = new System.Drawing.Size(23, 22);
@@ -896,7 +896,7 @@ namespace NClass.GUI
             // 
             this.toolCut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolCut.Enabled = false;
-            this.toolCut.Image = global::NClass.GUI.Properties.Resources.Cut;
+            this.toolCut.Image = global::EnClass.GUI.Properties.Resources.Cut;
             this.toolCut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolCut.Name = "toolCut";
             this.toolCut.Size = new System.Drawing.Size(23, 22);
@@ -906,7 +906,7 @@ namespace NClass.GUI
             // 
             this.toolCopy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolCopy.Enabled = false;
-            this.toolCopy.Image = global::NClass.GUI.Properties.Resources.Copy;
+            this.toolCopy.Image = global::EnClass.GUI.Properties.Resources.Copy;
             this.toolCopy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolCopy.Name = "toolCopy";
             this.toolCopy.Size = new System.Drawing.Size(23, 22);
@@ -916,7 +916,7 @@ namespace NClass.GUI
             // 
             this.toolPaste.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolPaste.Enabled = false;
-            this.toolPaste.Image = global::NClass.GUI.Properties.Resources.Paste;
+            this.toolPaste.Image = global::EnClass.GUI.Properties.Resources.Paste;
             this.toolPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolPaste.Name = "toolPaste";
             this.toolPaste.Size = new System.Drawing.Size(23, 22);
@@ -931,7 +931,7 @@ namespace NClass.GUI
             // 
             this.toolUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolUndo.Enabled = false;
-            this.toolUndo.Image = global::NClass.GUI.Properties.Resources.Undo;
+            this.toolUndo.Image = global::EnClass.GUI.Properties.Resources.Undo;
             this.toolUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolUndo.Name = "toolUndo";
             this.toolUndo.Size = new System.Drawing.Size(23, 22);
@@ -941,7 +941,7 @@ namespace NClass.GUI
             // 
             this.toolRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolRedo.Enabled = false;
-            this.toolRedo.Image = global::NClass.GUI.Properties.Resources.Redo;
+            this.toolRedo.Image = global::EnClass.GUI.Properties.Resources.Redo;
             this.toolRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolRedo.Name = "toolRedo";
             this.toolRedo.Size = new System.Drawing.Size(23, 22);
@@ -966,7 +966,7 @@ namespace NClass.GUI
             // 
             this.toolZoomOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolZoomOut.Enabled = false;
-            this.toolZoomOut.Image = global::NClass.GUI.Properties.Resources.ZoomOut;
+            this.toolZoomOut.Image = global::EnClass.GUI.Properties.Resources.ZoomOut;
             this.toolZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolZoomOut.Name = "toolZoomOut";
             this.toolZoomOut.Size = new System.Drawing.Size(23, 22);
@@ -976,7 +976,7 @@ namespace NClass.GUI
             // 
             this.toolZoomIn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolZoomIn.Enabled = false;
-            this.toolZoomIn.Image = global::NClass.GUI.Properties.Resources.ZoomIn;
+            this.toolZoomIn.Image = global::EnClass.GUI.Properties.Resources.ZoomIn;
             this.toolZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolZoomIn.Name = "toolZoomIn";
             this.toolZoomIn.Size = new System.Drawing.Size(23, 22);
@@ -986,7 +986,7 @@ namespace NClass.GUI
             // 
             this.toolAutoZoom.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolAutoZoom.Enabled = false;
-            this.toolAutoZoom.Image = global::NClass.GUI.Properties.Resources.AutoZoom;
+            this.toolAutoZoom.Image = global::EnClass.GUI.Properties.Resources.AutoZoom;
             this.toolAutoZoom.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolAutoZoom.Name = "toolAutoZoom";
             this.toolAutoZoom.Size = new System.Drawing.Size(23, 22);
@@ -1018,7 +1018,7 @@ namespace NClass.GUI
             this.modelExplorer.Size = new System.Drawing.Size(236, 403);
             this.modelExplorer.TabIndex = 0;
             this.modelExplorer.Workspace = null;
-            this.modelExplorer.DocumentOpening += new NClass.DiagramEditor.DocumentEventHandler(this.modelExplorer_DocumentOpening);
+            this.modelExplorer.DocumentOpening += new EnClass.DiagramEditor.DocumentEventHandler(this.modelExplorer_DocumentOpening);
             // 
             // diagramNavigator
             // 
@@ -1051,7 +1051,7 @@ namespace NClass.GUI
             this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NClass";
+            this.Text = "EnClass";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
@@ -1152,8 +1152,8 @@ namespace NClass.GUI
 		private System.Windows.Forms.SplitContainer toolsPanel;
 		private System.Windows.Forms.ToolStripMenuItem mnuModelExplorer;
 		private System.Windows.Forms.ToolStripMenuItem mnuDiagramNavigator;
-		private NClass.GUI.ModelExplorer.ModelView modelExplorer;
-		private NClass.GUI.DiagramNavigator diagramNavigator;
+		private EnClass.GUI.ModelExplorer.ModelView modelExplorer;
+		private EnClass.GUI.DiagramNavigator diagramNavigator;
 		private TabbedWindow tabbedWindow;
 		private System.Windows.Forms.ToolStripMenuItem mnuNewProject;
 		private System.Windows.Forms.ToolStripSeparator mnuSepProject;

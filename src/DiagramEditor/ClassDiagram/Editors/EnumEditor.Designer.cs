@@ -1,4 +1,4 @@
-﻿namespace NClass.DiagramEditor.ClassDiagram.Editors
+﻿namespace EnClass.DiagramEditor.ClassDiagram.Editors
 {
 	partial class EnumEditor
 	{
@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.txtName = new NClass.DiagramEditor.ClassDiagram.Editors.BorderedTextBox();
+			this.txtName = new EnClass.DiagramEditor.ClassDiagram.Editors.BorderedTextBox();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.toolVisibility = new System.Windows.Forms.ToolStripDropDownButton();
 			this.toolPublic = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +39,7 @@
 			this.toolPrivate = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolDefault = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolNewValue = new System.Windows.Forms.ToolStripButton();
-			this.txtNewValue = new NClass.DiagramEditor.ClassDiagram.Editors.BorderedTextBox();
+			this.txtNewValue = new EnClass.DiagramEditor.ClassDiagram.Editors.BorderedTextBox();
 			this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
 			this.toolStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize) (this.errorProvider)).BeginInit();
@@ -82,7 +82,7 @@
             this.toolProtected,
             this.toolPrivate,
             this.toolDefault});
-			this.toolVisibility.Image = global::NClass.DiagramEditor.Properties.Resources.PublicEnum;
+			this.toolVisibility.Image = global::EnClass.DiagramEditor.Properties.Resources.PublicEnum;
 			this.toolVisibility.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolVisibility.Name = "toolVisibility";
 			this.toolVisibility.Size = new System.Drawing.Size(30, 22);
@@ -90,7 +90,7 @@
 			// 
 			// toolPublic
 			// 
-			this.toolPublic.Image = global::NClass.DiagramEditor.Properties.Resources.PublicEnum;
+			this.toolPublic.Image = global::EnClass.DiagramEditor.Properties.Resources.PublicEnum;
 			this.toolPublic.Name = "toolPublic";
 			this.toolPublic.Size = new System.Drawing.Size(173, 22);
 			this.toolPublic.Text = "Public";
@@ -98,7 +98,7 @@
 			// 
 			// toolProtint
 			// 
-			this.toolProtint.Image = global::NClass.DiagramEditor.Properties.Resources.ProtintEnum;
+			this.toolProtint.Image = global::EnClass.DiagramEditor.Properties.Resources.ProtintEnum;
 			this.toolProtint.Name = "toolProtint";
 			this.toolProtint.Size = new System.Drawing.Size(173, 22);
 			this.toolProtint.Text = "Protected Internal";
@@ -106,7 +106,7 @@
 			// 
 			// toolInternal
 			// 
-			this.toolInternal.Image = global::NClass.DiagramEditor.Properties.Resources.InternalEnum;
+			this.toolInternal.Image = global::EnClass.DiagramEditor.Properties.Resources.InternalEnum;
 			this.toolInternal.Name = "toolInternal";
 			this.toolInternal.Size = new System.Drawing.Size(173, 22);
 			this.toolInternal.Text = "Internal";
@@ -114,7 +114,7 @@
 			// 
 			// toolProtected
 			// 
-			this.toolProtected.Image = global::NClass.DiagramEditor.Properties.Resources.ProtectedEnum;
+			this.toolProtected.Image = global::EnClass.DiagramEditor.Properties.Resources.ProtectedEnum;
 			this.toolProtected.Name = "toolProtected";
 			this.toolProtected.Size = new System.Drawing.Size(173, 22);
 			this.toolProtected.Text = "Protected";
@@ -122,7 +122,7 @@
 			// 
 			// toolPrivate
 			// 
-			this.toolPrivate.Image = global::NClass.DiagramEditor.Properties.Resources.PrivateEnum;
+			this.toolPrivate.Image = global::EnClass.DiagramEditor.Properties.Resources.PrivateEnum;
 			this.toolPrivate.Name = "toolPrivate";
 			this.toolPrivate.Size = new System.Drawing.Size(173, 22);
 			this.toolPrivate.Text = "Private";
@@ -130,7 +130,7 @@
 			// 
 			// toolDefault
 			// 
-			this.toolDefault.Image = global::NClass.DiagramEditor.Properties.Resources.DefaultEnum;
+			this.toolDefault.Image = global::EnClass.DiagramEditor.Properties.Resources.DefaultEnum;
 			this.toolDefault.Name = "toolDefault";
 			this.toolDefault.Size = new System.Drawing.Size(173, 22);
 			this.toolDefault.Text = "Default";
@@ -140,7 +140,7 @@
 			// 
 			this.toolNewValue.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolNewValue.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewValue.Image = global::NClass.DiagramEditor.Properties.Resources.NewEnumItem;
+			this.toolNewValue.Image = global::EnClass.DiagramEditor.Properties.Resources.NewEnumItem;
 			this.toolNewValue.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewValue.Name = "toolNewValue";
 			this.toolNewValue.Size = new System.Drawing.Size(23, 22);

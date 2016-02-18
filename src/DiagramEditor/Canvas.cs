@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under
@@ -22,13 +22,13 @@ using System.Drawing.Drawing2D;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
-using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram;
-using NClass.DiagramEditor.ClassDiagram.Shapes;
-using NClass.DiagramEditor.ClassDiagram.Connections;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.DiagramEditor.ClassDiagram;
+using EnClass.DiagramEditor.ClassDiagram.Shapes;
+using EnClass.DiagramEditor.ClassDiagram.Connections;
+using EnClass.Translations;
 
-namespace NClass.DiagramEditor
+namespace EnClass.DiagramEditor
 {
 	public partial class Canvas : UserControl, IDocumentVisualizer
 	{

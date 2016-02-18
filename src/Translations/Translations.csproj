@@ -8,8 +8,8 @@
     <ProjectGuid>{B3B7D798-3D52-47F0-B1A7-A91BC5FE184F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.Translations</RootNamespace>
-    <AssemblyName>NClass.Translations</AssemblyName>
+    <RootNamespace>EnClass.Translations</RootNamespace>
+    <AssemblyName>EnClass.Translations</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

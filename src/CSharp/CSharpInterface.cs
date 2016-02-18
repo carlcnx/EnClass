@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -16,9 +16,9 @@
 using System;
 using System.Text;
 using System.Collections.Generic;
-using NClass.Core;
+using EnClass.Core;
 
-namespace NClass.CSharp
+namespace EnClass.CSharp
 {
 	internal sealed class CSharpInterface : InterfaceType
 	{

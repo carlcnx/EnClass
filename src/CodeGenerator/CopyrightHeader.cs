@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using NClass.Translations;
+using EnClass.Translations;
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
     public partial class CopyrightHeader : Form
     {

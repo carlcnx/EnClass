@@ -109,7 +109,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\NClass.png" />
+    <None Include="Resources\EnClass.png" />
     <None Include="Resources\Document-pdf-48.png" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace NClass.GUI
+﻿namespace EnClass.GUI
 {
 	partial class TabbedWindow
 	{
@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.canvas = new NClass.DiagramEditor.Canvas();
-			this.tabBar = new NClass.GUI.TabBar();
+			this.canvas = new EnClass.DiagramEditor.Canvas();
+			this.tabBar = new EnClass.GUI.TabBar();
 			this.SuspendLayout();
 			// 
 			// canvas
@@ -70,7 +70,7 @@
 		#endregion
 
 		private TabBar tabBar;
-		private NClass.DiagramEditor.Canvas canvas;
+		private EnClass.DiagramEditor.Canvas canvas;
 
 	}
 }

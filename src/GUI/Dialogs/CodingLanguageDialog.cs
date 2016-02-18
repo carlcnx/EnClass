@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using NClass.Core;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.Translations;
 
-namespace NClass.GUI.Dialogs
+namespace EnClass.GUI.Dialogs
 {
     public partial class CodingLanguageDialog : Form
     {

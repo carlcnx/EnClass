@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ICSharpCode.NRefactory.CSharp;
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
     public partial class FormatStyleSettings : Form
     {

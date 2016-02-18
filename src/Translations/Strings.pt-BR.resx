@@ -525,7 +525,7 @@ Não é possível definir o acesso modificador explícito em execução.</value>
   </data>
   <data name="CheckingForUpdates" xml:space="preserve">
     <value>Verificando por atualizações</value>
-    <comment>MessageBox caption then checking for new versions of NClass</comment>
+    <comment>MessageBox caption then checking for new versions of EnClass</comment>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Desconhecido</value>
@@ -649,8 +649,8 @@ Não é possível definir o acesso modificador explícito em execução.</value>
     <value>Tipo</value>
     <comment>The type of a class member</comment>
   </data>
-  <data name="AboutNClass" xml:space="preserve">
-    <value>Sobre NClass</value>
+  <data name="AboutEnClass" xml:space="preserve">
+    <value>Sobre EnClass</value>
     <comment>Caption text of the About dialog</comment>
   </data>
   <data name="AddNewStructure" xml:space="preserve">
@@ -681,7 +681,7 @@ Não é possível definir o acesso modificador explícito em execução.</value>
     <value>&amp;Enum</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
-    <value>&amp;SobreNClass...</value>
+    <value>&amp;SobreEnClass...</value>
   </data>
   <data name="ErrorCannotSaveFile" xml:space="preserve">
     <value>Não pode salva um arquivos sem um caminho específico.</value>
@@ -961,8 +961,8 @@ Um crash log e recuperação ficheiros foram criados no diretório Application D
   <data name="MenuZoomOut" xml:space="preserve">
     <value>Zoom &amp;Out</value>
   </data>
-  <data name="NClassProjectFiles" xml:space="preserve">
-    <value>Arquivos do Projeto NClass </value>
+  <data name="EnClassProjectFiles" xml:space="preserve">
+    <value>Arquivos do Projeto EnClass </value>
   </data>
   <data name="ErrorBlankFilename" xml:space="preserve">
     <value>Nome do arquivo não pode ser vazio.</value>

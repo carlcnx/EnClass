@@ -120,8 +120,8 @@
   <data name="Class" xml:space="preserve">
     <value>osztály</value>
   </data>
-  <data name="AboutNClass" xml:space="preserve">
-    <value>NClass névjegye</value>
+  <data name="AboutEnClass" xml:space="preserve">
+    <value>EnClass névjegye</value>
   </data>
   <data name="Interface" xml:space="preserve">
     <value>interfész</value>
@@ -789,8 +789,8 @@ Biztos, hogy folytatni akarja?</value>
   <data name="Name" xml:space="preserve">
     <value>Név</value>
   </data>
-  <data name="NClassProjectFiles" xml:space="preserve">
-    <value>NClass projekt fájlok</value>
+  <data name="EnClassProjectFiles" xml:space="preserve">
+    <value>EnClass projekt fájlok</value>
   </data>
   <data name="Nesting" xml:space="preserve">
     <value>Tartalmazás</value>

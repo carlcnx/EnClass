@@ -5,7 +5,7 @@ using System.Text;
 using ICSharpCode.NRefactory.CSharp;
 
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
     /// <summary>
     /// The formatting options factory creates pre defined formatting option styles.

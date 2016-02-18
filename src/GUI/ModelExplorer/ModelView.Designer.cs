@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace NClass.GUI.ModelExplorer
+namespace EnClass.GUI.ModelExplorer
 {
 	partial class ModelView
 	{
@@ -77,7 +77,7 @@ namespace NClass.GUI.ModelExplorer
 			// 
 			// mnuNewProject
 			// 
-			this.mnuNewProject.Image = global::NClass.GUI.Properties.Resources.Project;
+			this.mnuNewProject.Image = global::EnClass.GUI.Properties.Resources.Project;
 			this.mnuNewProject.Name = "mnuNewProject";
 			this.mnuNewProject.Size = new System.Drawing.Size(167, 22);
 			this.mnuNewProject.Text = "&New Project";
@@ -93,7 +93,7 @@ namespace NClass.GUI.ModelExplorer
             this.mnuRecentFile3,
             this.mnuRecentFile4,
             this.mnuRecentFile5});
-			this.mnuOpen.Image = global::NClass.GUI.Properties.Resources.Open;
+			this.mnuOpen.Image = global::EnClass.GUI.Properties.Resources.Open;
 			this.mnuOpen.Name = "mnuOpen";
 			this.mnuOpen.Size = new System.Drawing.Size(167, 22);
 			this.mnuOpen.Text = "&Open";
@@ -154,7 +154,7 @@ namespace NClass.GUI.ModelExplorer
 			// 
 			// mnuSaveAll
 			// 
-			this.mnuSaveAll.Image = global::NClass.GUI.Properties.Resources.SaveAll;
+			this.mnuSaveAll.Image = global::EnClass.GUI.Properties.Resources.SaveAll;
 			this.mnuSaveAll.Name = "mnuSaveAll";
 			this.mnuSaveAll.Size = new System.Drawing.Size(167, 22);
 			this.mnuSaveAll.Text = "Save A&ll Projects";

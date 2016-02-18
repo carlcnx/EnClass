@@ -32,11 +32,11 @@
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PDFExportProgress));
       this.lblProgress = new System.Windows.Forms.Label();
       this.timer = new System.Windows.Forms.Timer(this.components);
-      this.pictureBoxNClass = new System.Windows.Forms.PictureBox();
+      this.pictureBoxEnClass = new System.Windows.Forms.PictureBox();
       this.pictureBoxPDF = new System.Windows.Forms.PictureBox();
       this.imageListEntities = new System.Windows.Forms.ImageList(this.components);
       this.pictureBoxEntity = new System.Windows.Forms.PictureBox();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNClass)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnClass)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPDF)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEntity)).BeginInit();
       this.SuspendLayout();
@@ -55,14 +55,14 @@
       this.timer.Interval = 10;
       this.timer.Tick += new System.EventHandler(this.timer_Tick);
       // 
-      // pictureBoxNClass
+      // pictureBoxEnClass
       // 
-      this.pictureBoxNClass.Image = global::PDFExport.Properties.Resources.NClass;
-      this.pictureBoxNClass.Location = new System.Drawing.Point(12, 44);
-      this.pictureBoxNClass.Name = "pictureBoxNClass";
-      this.pictureBoxNClass.Size = new System.Drawing.Size(48, 48);
-      this.pictureBoxNClass.TabIndex = 2;
-      this.pictureBoxNClass.TabStop = false;
+      this.pictureBoxEnClass.Image = global::PDFExport.Properties.Resources.EnClass;
+      this.pictureBoxEnClass.Location = new System.Drawing.Point(12, 44);
+      this.pictureBoxEnClass.Name = "pictureBoxEnClass";
+      this.pictureBoxEnClass.Size = new System.Drawing.Size(48, 48);
+      this.pictureBoxEnClass.TabIndex = 2;
+      this.pictureBoxEnClass.TabStop = false;
       // 
       // pictureBoxPDF
       // 
@@ -98,7 +98,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(292, 132);
       this.ControlBox = false;
-      this.Controls.Add(this.pictureBoxNClass);
+      this.Controls.Add(this.pictureBoxEnClass);
       this.Controls.Add(this.pictureBoxPDF);
       this.Controls.Add(this.lblProgress);
       this.Controls.Add(this.pictureBoxEntity);
@@ -111,7 +111,7 @@
       this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "PDF Export...";
       this.Load += new System.EventHandler(this.PDFExportProgress_Load);
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNClass)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEnClass)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPDF)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEntity)).EndInit();
       this.ResumeLayout(false);
@@ -122,7 +122,7 @@
 
     private System.Windows.Forms.Label lblProgress;
     private System.Windows.Forms.PictureBox pictureBoxPDF;
-    private System.Windows.Forms.PictureBox pictureBoxNClass;
+    private System.Windows.Forms.PictureBox pictureBoxEnClass;
     private System.Windows.Forms.Timer timer;
     private System.Windows.Forms.ImageList imageListEntities;
     private System.Windows.Forms.PictureBox pictureBoxEntity;

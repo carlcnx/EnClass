@@ -1,6 +1,6 @@
-using NClass.Core;
+using EnClass.Core;
 
-namespace NClass.AssemblyCSharpImport
+namespace EnClass.AssemblyCSharpImport
 {
   public static class Extensions
   {
@@ -11,11 +11,11 @@ namespace NClass.AssemblyCSharpImport
 
     /// <summary>
     /// Converts the access modifier of the NReflect library into the corresponding
-    /// NClass access modifier.
+    /// EnClass access modifier.
     /// </summary>
     /// <param name="accessModifier">The access modifier of the NReflect library to convert.</param>
-    /// <returns>The converted NClass access modifier.</returns>
-    public static AccessModifier ToNClass(this NReflect.Modifier.AccessModifier accessModifier)
+    /// <returns>The converted EnClass access modifier.</returns>
+    public static AccessModifier ToEnClass(this NReflect.Modifier.AccessModifier accessModifier)
     {
       switch (accessModifier)
       {
@@ -38,11 +38,11 @@ namespace NClass.AssemblyCSharpImport
 
     /// <summary>
     /// Converts the class modifier of the NReflect library into the corresponding
-    /// NClass class modifier.
+    /// EnClass class modifier.
     /// </summary>
     /// <param name="classModifier">The class modifier of the NReflect library to convert.</param>
-    /// <returns>The converted NClass class modifier.</returns>
-    public static ClassModifier ToNClass(this NReflect.Modifier.ClassModifier classModifier)
+    /// <returns>The converted EnClass class modifier.</returns>
+    public static ClassModifier ToEnClass(this NReflect.Modifier.ClassModifier classModifier)
     {
       switch (classModifier)
       {
@@ -62,11 +62,11 @@ namespace NClass.AssemblyCSharpImport
 
     /// <summary>
     /// Converts the access modifier of the NRefactory library into the corresponding
-    /// NClass access modifier.
+    /// EnClass access modifier.
     /// </summary>
     /// <param name="accessModifier">The access modifier of the NRefactory library to convert.</param>
-    /// <returns>The converted NClass access modifier.</returns>
-    public static AccessModifier ToNClass(this ICSharpCode.NRefactory.CSharp.Modifiers accessModifier)
+    /// <returns>The converted EnClass access modifier.</returns>
+    public static AccessModifier ToEnClass(this ICSharpCode.NRefactory.CSharp.Modifiers accessModifier)
     {
         switch (accessModifier)
         {
@@ -136,11 +136,11 @@ namespace NClass.AssemblyCSharpImport
 
     /// <summary>
     /// Converts the class modifier of the NRefactory library into the corresponding
-    /// NClass class modifier.
+    /// EnClass class modifier.
     /// </summary>
     /// <param name="classModifier">The class modifier of the NRefactory library to convert.</param>
-    /// <returns>The converted NClass class modifier.</returns>
-    public static ClassModifier ToNClassFromClass(this ICSharpCode.NRefactory.CSharp.Modifiers classModifier)
+    /// <returns>The converted EnClass class modifier.</returns>
+    public static ClassModifier ToEnClassFromClass(this ICSharpCode.NRefactory.CSharp.Modifiers classModifier)
     {
         switch (classModifier)
         {
@@ -159,11 +159,11 @@ namespace NClass.AssemblyCSharpImport
 
     /// <summary>
     /// Converts the parameter modifier of the NRefactory library into the corresponding
-    /// NClass parameter modifier.
+    /// EnClass parameter modifier.
     /// </summary>
     /// <param name="parameterModifier">The parameter modifier of the NRefactory library to convert.</param>
-    /// <returns>The converted NClass class modifier.</returns>
-    public static ParameterModifier ToNClass(this ICSharpCode.NRefactory.CSharp.ParameterModifier parameterModifier)
+    /// <returns>The converted EnClass class modifier.</returns>
+    public static ParameterModifier ToEnClass(this ICSharpCode.NRefactory.CSharp.ParameterModifier parameterModifier)
     {
         switch (parameterModifier)
         {

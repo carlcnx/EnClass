@@ -8,8 +8,8 @@
     <ProjectGuid>{755B2714-62DB-419C-9097-49C08439E7E3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.CSharp</RootNamespace>
-    <AssemblyName>NClass.CSharp</AssemblyName>
+    <RootNamespace>EnClass.CSharp</RootNamespace>
+    <AssemblyName>EnClass.CSharp</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>

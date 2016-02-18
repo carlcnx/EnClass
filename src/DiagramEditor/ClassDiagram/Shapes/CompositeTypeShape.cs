@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -15,11 +15,11 @@
 
 using System;
 using System.Drawing;
-using NClass.Core;
-using NClass.DiagramEditor.ClassDiagram.Dialogs;
-using NClass.DiagramEditor.ClassDiagram.Editors;
+using EnClass.Core;
+using EnClass.DiagramEditor.ClassDiagram.Dialogs;
+using EnClass.DiagramEditor.ClassDiagram.Editors;
 
-namespace NClass.DiagramEditor.ClassDiagram.Shapes
+namespace EnClass.DiagramEditor.ClassDiagram.Shapes
 {
 	public abstract class CompositeTypeShape : TypeShape
 	{

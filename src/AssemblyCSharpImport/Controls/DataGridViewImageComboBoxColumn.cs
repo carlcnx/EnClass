@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace NClass.AssemblyCSharpImport.Controls
+namespace EnClass.AssemblyCSharpImport.Controls
 {
   /// <summary>
   ///   A column for a <see cref = "DataGridView" /> which contains <see cref = "ImageComboBox" />es.

@@ -1,4 +1,4 @@
-// NClass - Free class diagram editor
+// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -18,7 +18,7 @@ using System.Xml;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace NClass.Core
+namespace EnClass.Core
 {
 	public abstract class Field : Member
 	{

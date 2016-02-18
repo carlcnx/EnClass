@@ -8,8 +8,8 @@
     <ProjectGuid>{A2918CE1-6894-4FC9-A864-4651769D0274}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.GUI</RootNamespace>
-    <AssemblyName>NClass</AssemblyName>
+    <RootNamespace>EnClass.GUI</RootNamespace>
+    <AssemblyName>EnClass</AssemblyName>
     <StartupObject>
     </StartupObject>
     <ApplicationIcon>

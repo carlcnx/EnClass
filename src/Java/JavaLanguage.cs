@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -18,10 +18,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using NClass.Core;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.Translations;
 
-namespace NClass.Java
+namespace EnClass.Java
 {
 	public sealed class JavaLanguage : Language
 	{

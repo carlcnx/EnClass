@@ -8,7 +8,7 @@ using ICSharpCode.NRefactory.CSharp;
 using System.ComponentModel;
 
 
-namespace NClass.CodeGenerator
+namespace EnClass.CodeGenerator
 {
     [DefaultPropertyAttribute("C# formatting Options")]
     public class CSharpFormattingOptionsUI

@@ -7,8 +7,8 @@
     <ProjectGuid>{582AEB3C-84E7-4052-A631-B4EA716C5F72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.Common</RootNamespace>
-    <AssemblyName>NClass.Common</AssemblyName>
+    <RootNamespace>EnClass.Common</RootNamespace>
+    <AssemblyName>EnClass.Common</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

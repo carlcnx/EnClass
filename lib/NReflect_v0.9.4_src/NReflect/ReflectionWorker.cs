@@ -72,7 +72,7 @@ namespace NReflect
     private Dictionary<String, Assembly> assemblies;
 
     /// <summary>
-    /// Takes mappings from the full qualified name of a type to the generated NClass-
+    /// Takes mappings from the full qualified name of a type to the generated EnClass-
     /// entity.
     /// </summary>
     private readonly Dictionary<Type, NRTypeBase> entities;

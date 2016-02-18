@@ -527,7 +527,7 @@
   </data>
   <data name="CheckingForUpdates" xml:space="preserve">
     <value>Vérifier les mise à jour</value>
-    <comment>MessageBox caption then checking for new versions of NClass</comment>
+    <comment>MessageBox caption then checking for new versions of EnClass</comment>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Inconnu</value>
@@ -651,8 +651,8 @@
     <value>Type</value>
     <comment>The type of a class member</comment>
   </data>
-  <data name="AboutNClass" xml:space="preserve">
-    <value>A propos de NClass</value>
+  <data name="AboutEnClass" xml:space="preserve">
+    <value>A propos de EnClass</value>
     <comment>Caption text of the About dialog</comment>
   </data>
   <data name="AddNewStructure" xml:space="preserve">
@@ -683,7 +683,7 @@
     <value>&amp;Enum</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
-    <value>&amp;A propos de NClass...</value>
+    <value>&amp;A propos de EnClass...</value>
   </data>
   <data name="ErrorCannotSaveFile" xml:space="preserve">
     <value>Vous ne pouvez pas enregistrer le fichier avec le chemin non spécifié.</value>
@@ -968,8 +968,8 @@ Un journal de l'accident et de récupération des fichiers ont été créés dan
   <data name="MenuZoomOut" xml:space="preserve">
     <value>Zoom &amp;Arrière</value>
   </data>
-  <data name="NClassProjectFiles" xml:space="preserve">
-    <value>Fichier projet NClass</value>
+  <data name="EnClassProjectFiles" xml:space="preserve">
+    <value>Fichier projet EnClass</value>
   </data>
   <data name="ErrorBlankFilename" xml:space="preserve">
     <value>Nom du fichier ne peut pas être vide.</value>

@@ -124,7 +124,7 @@
   <data name="Document_pdf_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Document-pdf-48.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NClass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NClass.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EnClass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EnClass.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

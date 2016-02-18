@@ -1,4 +1,4 @@
-﻿namespace NClass.CodeGenerator
+﻿namespace EnClass.CodeGenerator
 {
 	partial class Dialog
 	{
@@ -130,7 +130,7 @@
             this.toolDelete.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolDelete.Enabled = false;
-            this.toolDelete.Image = global::NClass.CodeGenerator.Properties.Resources.Delete;
+            this.toolDelete.Image = global::EnClass.CodeGenerator.Properties.Resources.Delete;
             this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolDelete.Name = "toolDelete";
             this.toolDelete.Size = new System.Drawing.Size(23, 22);
@@ -142,7 +142,7 @@
             this.toolMoveDown.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolMoveDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolMoveDown.Enabled = false;
-            this.toolMoveDown.Image = global::NClass.CodeGenerator.Properties.Resources.MoveDown;
+            this.toolMoveDown.Image = global::EnClass.CodeGenerator.Properties.Resources.MoveDown;
             this.toolMoveDown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolMoveDown.Name = "toolMoveDown";
             this.toolMoveDown.Size = new System.Drawing.Size(23, 22);
@@ -154,7 +154,7 @@
             this.toolMoveUp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolMoveUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolMoveUp.Enabled = false;
-            this.toolMoveUp.Image = global::NClass.CodeGenerator.Properties.Resources.MoveUp;
+            this.toolMoveUp.Image = global::EnClass.CodeGenerator.Properties.Resources.MoveUp;
             this.toolMoveUp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolMoveUp.Name = "toolMoveUp";
             this.toolMoveUp.Size = new System.Drawing.Size(23, 22);

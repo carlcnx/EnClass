@@ -520,7 +520,7 @@
   </data>
   <data name="CheckingForUpdates" xml:space="preserve">
     <value>Überprüfe auf Updates</value>
-    <comment>MessageBox caption then checking for new versions of NClass</comment>
+    <comment>MessageBox caption then checking for new versions of EnClass</comment>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Unbekannt</value>
@@ -644,8 +644,8 @@
     <value>Typ</value>
     <comment>The type of a class member</comment>
   </data>
-  <data name="AboutNClass" xml:space="preserve">
-    <value>Über NClass</value>
+  <data name="AboutEnClass" xml:space="preserve">
+    <value>Über EnClass</value>
     <comment>Caption text of the About dialog</comment>
   </data>
   <data name="AddNewStructure" xml:space="preserve">
@@ -676,7 +676,7 @@
     <value>&amp;Aufzählung</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
-    <value>&amp;Über NClass...</value>
+    <value>&amp;Über EnClass...</value>
   </data>
   <data name="ErrorCannotSaveFile" xml:space="preserve">
     <value>Es ist nicht möglich die Datei zu speichern, die Pfadangabe ist nicht korrekt.</value>
@@ -958,7 +958,7 @@
   <data name="MenuZoomOut" xml:space="preserve">
     <value>Zoom &amp;Raus</value>
   </data>
-  <data name="NClassProjectFiles" xml:space="preserve">
+  <data name="EnClassProjectFiles" xml:space="preserve">
     <value>NCLass Projekt-Datei</value>
   </data>
   <data name="ErrorBlankFilename" xml:space="preserve">

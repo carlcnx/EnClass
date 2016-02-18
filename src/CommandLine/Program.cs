@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NClass.Translations;
-using NClass.Common;
+using EnClass.Translations;
+using EnClass.Common;
 
 
 namespace CommandLine
@@ -33,7 +33,7 @@ namespace CommandLine
             {
                 switch (args[i])
                 {
-                    // NClass project to load if exist or to create
+                    // EnClass project to load if exist or to create
                     case "-project":
                     case "-p":
                         result = App.FileExist(i, args.Length, args[i + 1], "-project");
@@ -46,7 +46,7 @@ namespace CommandLine
                         // TO DO:
                         // Workspace.Default.OpenProject(filePath);
                         break;
-                    // NClass settings to load (file must exist)
+                    // EnClass settings to load (file must exist)
                     case "-settings":
                     case "-s":
                         result = App.FileExist(i, args.Length, args[i + 1], "-settings");
@@ -111,7 +111,7 @@ namespace CommandLine
 
             Console.WriteLine("-h / -help             Show the help to use this software.");
             Console.WriteLine("-v / -version          Show the version of this software.");
-            Console.WriteLine("-p / -project          NClass project file to modify or create.");
+            Console.WriteLine("-p / -project          EnClass project file to modify or create.");
             Console.WriteLine("-s / -setting          Settings file to load.");
             Console.WriteLine("-d / -directory        Working directory where to put log file.");
             Console.WriteLine("-l / -log_cfg          Config log file.");
@@ -120,7 +120,7 @@ namespace CommandLine
 
         private static void DisplayVersion()
         {
-            Console.WriteLine("NClass modified by Samuel Didier - Copyright - 2014 - Version 1.0 beta");
+            Console.WriteLine("EnClass modified by Samuel Didier - Copyright - 2014 - Version 1.0 beta");
             Console.WriteLine("Software to add comments, regions and summary tags based on my custom style to C# source code");
         }
 

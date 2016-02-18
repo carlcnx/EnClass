@@ -1,4 +1,4 @@
-﻿namespace NClass.DiagramEditor.ClassDiagram.Dialogs
+﻿namespace EnClass.DiagramEditor.ClassDiagram.Dialogs
 {
 	partial class MembersDialog
 	{
@@ -297,7 +297,7 @@
 			// toolNewField
 			// 
 			this.toolNewField.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewField.Image = global::NClass.DiagramEditor.Properties.Resources.Field;
+			this.toolNewField.Image = global::EnClass.DiagramEditor.Properties.Resources.Field;
 			this.toolNewField.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewField.Name = "toolNewField";
 			this.toolNewField.Size = new System.Drawing.Size(23, 22);
@@ -307,7 +307,7 @@
 			// toolNewMethod
 			// 
 			this.toolNewMethod.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewMethod.Image = global::NClass.DiagramEditor.Properties.Resources.Method;
+			this.toolNewMethod.Image = global::EnClass.DiagramEditor.Properties.Resources.Method;
 			this.toolNewMethod.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewMethod.Name = "toolNewMethod";
 			this.toolNewMethod.Size = new System.Drawing.Size(23, 22);
@@ -317,7 +317,7 @@
 			// toolNewConstructor
 			// 
 			this.toolNewConstructor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewConstructor.Image = global::NClass.DiagramEditor.Properties.Resources.Constructor;
+			this.toolNewConstructor.Image = global::EnClass.DiagramEditor.Properties.Resources.Constructor;
 			this.toolNewConstructor.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewConstructor.Name = "toolNewConstructor";
 			this.toolNewConstructor.Size = new System.Drawing.Size(23, 22);
@@ -327,7 +327,7 @@
 			// toolNewDestructor
 			// 
 			this.toolNewDestructor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewDestructor.Image = global::NClass.DiagramEditor.Properties.Resources.Destructor;
+			this.toolNewDestructor.Image = global::EnClass.DiagramEditor.Properties.Resources.Destructor;
 			this.toolNewDestructor.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewDestructor.Name = "toolNewDestructor";
 			this.toolNewDestructor.Size = new System.Drawing.Size(23, 22);
@@ -337,7 +337,7 @@
 			// toolNewProperty
 			// 
 			this.toolNewProperty.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewProperty.Image = global::NClass.DiagramEditor.Properties.Resources.Property;
+			this.toolNewProperty.Image = global::EnClass.DiagramEditor.Properties.Resources.Property;
 			this.toolNewProperty.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewProperty.Name = "toolNewProperty";
 			this.toolNewProperty.Size = new System.Drawing.Size(23, 22);
@@ -347,7 +347,7 @@
 			// toolNewEvent
 			// 
 			this.toolNewEvent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewEvent.Image = global::NClass.DiagramEditor.Properties.Resources.Event;
+			this.toolNewEvent.Image = global::EnClass.DiagramEditor.Properties.Resources.Event;
 			this.toolNewEvent.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewEvent.Name = "toolNewEvent";
 			this.toolNewEvent.Size = new System.Drawing.Size(23, 22);
@@ -358,7 +358,7 @@
 			// 
 			this.toolDelete.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolDelete.Image = global::NClass.DiagramEditor.Properties.Resources.Delete;
+			this.toolDelete.Image = global::EnClass.DiagramEditor.Properties.Resources.Delete;
 			this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolDelete.Name = "toolDelete";
 			this.toolDelete.Size = new System.Drawing.Size(23, 22);
@@ -375,7 +375,7 @@
 			// 
 			this.toolMoveDown.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolMoveDown.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolMoveDown.Image = global::NClass.DiagramEditor.Properties.Resources.MoveDown;
+			this.toolMoveDown.Image = global::EnClass.DiagramEditor.Properties.Resources.MoveDown;
 			this.toolMoveDown.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolMoveDown.Name = "toolMoveDown";
 			this.toolMoveDown.Size = new System.Drawing.Size(23, 22);
@@ -386,7 +386,7 @@
 			// 
 			this.toolMoveUp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolMoveUp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolMoveUp.Image = global::NClass.DiagramEditor.Properties.Resources.MoveUp;
+			this.toolMoveUp.Image = global::EnClass.DiagramEditor.Properties.Resources.MoveUp;
 			this.toolMoveUp.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolMoveUp.Name = "toolMoveUp";
 			this.toolMoveUp.Size = new System.Drawing.Size(23, 22);
@@ -403,7 +403,7 @@
 			// 
 			this.toolSortByName.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolSortByName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolSortByName.Image = global::NClass.DiagramEditor.Properties.Resources.SortByName;
+			this.toolSortByName.Image = global::EnClass.DiagramEditor.Properties.Resources.SortByName;
 			this.toolSortByName.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolSortByName.Name = "toolSortByName";
 			this.toolSortByName.Size = new System.Drawing.Size(23, 22);
@@ -414,7 +414,7 @@
 			// 
 			this.toolSortByAccess.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolSortByAccess.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolSortByAccess.Image = global::NClass.DiagramEditor.Properties.Resources.SortByAccess;
+			this.toolSortByAccess.Image = global::EnClass.DiagramEditor.Properties.Resources.SortByAccess;
 			this.toolSortByAccess.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolSortByAccess.Name = "toolSortByAccess";
 			this.toolSortByAccess.Size = new System.Drawing.Size(23, 22);
@@ -425,7 +425,7 @@
 			// 
 			this.toolSortByKind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.toolSortByKind.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolSortByKind.Image = global::NClass.DiagramEditor.Properties.Resources.SortByKind;
+			this.toolSortByKind.Image = global::EnClass.DiagramEditor.Properties.Resources.SortByKind;
 			this.toolSortByKind.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolSortByKind.Name = "toolSortByKind";
 			this.toolSortByKind.Size = new System.Drawing.Size(23, 22);
@@ -440,7 +440,7 @@
 			// toolOverrideList
 			// 
 			this.toolOverrideList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolOverrideList.Image = global::NClass.DiagramEditor.Properties.Resources.Overrides;
+			this.toolOverrideList.Image = global::EnClass.DiagramEditor.Properties.Resources.Overrides;
 			this.toolOverrideList.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolOverrideList.Name = "toolOverrideList";
 			this.toolOverrideList.Size = new System.Drawing.Size(23, 22);
@@ -450,7 +450,7 @@
 			// toolImplementList
 			// 
 			this.toolImplementList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolImplementList.Image = global::NClass.DiagramEditor.Properties.Resources.Implements;
+			this.toolImplementList.Image = global::EnClass.DiagramEditor.Properties.Resources.Implements;
 			this.toolImplementList.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolImplementList.Name = "toolImplementList";
 			this.toolImplementList.Size = new System.Drawing.Size(23, 22);

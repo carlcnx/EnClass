@@ -1,4 +1,4 @@
-﻿// NClass - Free class diagram editor
+﻿// EnClass - Free class diagram editor
 // Copyright (C) 2006-2009 Balazs Tihanyi
 // 
 // This program is free software; you can redistribute it and/or modify it under 
@@ -22,13 +22,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.ComponentModel;
 using System.Windows.Forms;
-using NClass.Core;
-using NClass.DiagramEditor;
-using NClass.DiagramEditor.ClassDiagram;
-using NClass.GUI.Dialogs;
-using NClass.Translations;
+using EnClass.Core;
+using EnClass.DiagramEditor;
+using EnClass.DiagramEditor.ClassDiagram;
+using EnClass.GUI.Dialogs;
+using EnClass.Translations;
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
 	public sealed partial class MainForm : Form
 	{
@@ -162,8 +162,8 @@ namespace NClass.GUI
 				{
 					if (type.IsSubclassOf(typeof(Plugin)))
 					{
-						NClassEnvironment environment =
-							new NClassEnvironment(Workspace.Default, docManager);
+						EnClassEnvironment environment =
+							new EnClassEnvironment(Workspace.Default, docManager);
 						Plugin plugin = (Plugin) Activator.CreateInstance(type, environment);
 						plugins.Add(plugin);
 					}
@@ -297,13 +297,13 @@ namespace NClass.GUI
 				string projectName = Workspace.Default.ActiveProject.Name;
 
 				if (Workspace.Default.ActiveProject.IsDirty)
-					this.Text = projectName + "* - NClass";
+					this.Text = projectName + "* - EnClass";
 				else
-					this.Text = projectName + " - NClass";
+					this.Text = projectName + " - EnClass";
 			}
 			else
 			{
-				this.Text = "NClass";
+				this.Text = "EnClass";
 			}
 		}
 
@@ -826,7 +826,7 @@ namespace NClass.GUI
 
 		private void mnuContents_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(Strings.NotImplemented, "NClass",
+			MessageBox.Show(Strings.NotImplemented, "EnClass",
 				MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 

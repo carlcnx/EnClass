@@ -8,7 +8,7 @@
     <ProjectGuid>{88605D35-9E31-47CC-B6A2-45E6381D52B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NClass.AssemblyCSharpImport</RootNamespace>
+    <RootNamespace>EnClass.AssemblyCSharpImport</RootNamespace>
     <AssemblyName>AssemblyCSharpImport</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

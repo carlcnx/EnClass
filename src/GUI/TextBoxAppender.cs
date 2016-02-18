@@ -4,7 +4,7 @@ using log4net;
 using log4net.Appender;
 using log4net.Repository.Hierarchy;
 
-namespace NClass.GUI
+namespace EnClass.GUI
 {
     public class TextBoxAppender : IAppender
     {

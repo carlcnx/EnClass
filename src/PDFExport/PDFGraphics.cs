@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Text.RegularExpressions;
-using NClass.DiagramEditor;
+using EnClass.DiagramEditor;
 using PdfSharp.Drawing;
 
 namespace PDFExport
@@ -44,7 +44,7 @@ namespace PDFExport
   /// 
   /// There are a few things which are not perfect and won't be changed now:
   /// - Only horizontal, vertical and diagonal gradients are drawn correctly. Thats ok since
-  ///   NClass dosn't use any other gradients.
+  ///   EnClass dosn't use any other gradients.
   /// - Images get a gray border in pdf if they have colored (even white) pixels next to
   ///   transparent pixels. A workaround is to draw them by GDI on a surface. This surface
   ///   is white. This looks good until the backgound of the entity is also white. If  not,
@@ -544,7 +544,7 @@ namespace PDFExport
         //the line is neither horizontal, nor vertical, nor diagonal. To fill the whole
         //rectangle with the gradient, the start and end point of the line must be located
         //outside the rectangle. To determine this gap we have to use some trigonometry.
-        //This will happily never the case in NClass. So we don't have to do this here.
+        //This will happily never the case in EnClass. So we don't have to do this here.
 
         xbrush = new XLinearGradientBrush(p1, p2, lgBrush.LinearColors[0], lgBrush.LinearColors[1]);
       }

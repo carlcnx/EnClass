@@ -1,4 +1,4 @@
-﻿namespace NClass.DiagramEditor.ClassDiagram.Editors
+﻿namespace EnClass.DiagramEditor.ClassDiagram.Editors
 {
 	partial class CommentEditor
 	{

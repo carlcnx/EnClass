@@ -624,8 +624,8 @@
   <data name="Type" xml:space="preserve">
     <value>类型</value>
   </data>
-  <data name="AboutNClass" xml:space="preserve">
-    <value>关于NClass</value>
+  <data name="AboutEnClass" xml:space="preserve">
+    <value>关于EnClass</value>
   </data>
   <data name="AddNewStructure" xml:space="preserve">
     <value>添加新构造</value>
@@ -655,7 +655,7 @@
     <value>枚举(&amp;E)</value>
   </data>
   <data name="MenuAbout" xml:space="preserve">
-    <value>关于NClass(&amp;A)</value>
+    <value>关于EnClass(&amp;A)</value>
   </data>
   <data name="ErrorCannotSaveFile" xml:space="preserve">
     <value>无法保存未指定路径文件。</value>
@@ -975,8 +975,8 @@
   <data name="MenuZoomOut" xml:space="preserve">
     <value>缩小(&amp;O)</value>
   </data>
-  <data name="NClassProjectFiles" xml:space="preserve">
-    <value>NClass工程文件</value>
+  <data name="EnClassProjectFiles" xml:space="preserve">
+    <value>EnClass工程文件</value>
   </data>
   <data name="ErrorBlankFilename" xml:space="preserve">
     <value>文件名不能为空。</value>

@@ -1,4 +1,4 @@
-﻿namespace NClass.DiagramEditor.ClassDiagram
+﻿namespace EnClass.DiagramEditor.ClassDiagram
 {
 	partial class DiagramDynamicMenu
 	{
@@ -254,14 +254,14 @@
             this.mnuNewDependency,
             this.mnuNewNesting,
             this.mnuNewCommentRelationship});
-			this.mnuAddNewElement.Image = global::NClass.DiagramEditor.Properties.Resources.NewEntity;
+			this.mnuAddNewElement.Image = global::EnClass.DiagramEditor.Properties.Resources.NewEntity;
 			this.mnuAddNewElement.Name = "mnuAddNewElement";
 			this.mnuAddNewElement.Size = new System.Drawing.Size(170, 22);
 			this.mnuAddNewElement.Text = "&Add New";
 			// 
 			// mnuNewClass
 			// 
-			this.mnuNewClass.Image = global::NClass.DiagramEditor.Properties.Resources.Class;
+			this.mnuNewClass.Image = global::EnClass.DiagramEditor.Properties.Resources.Class;
 			this.mnuNewClass.Name = "mnuNewClass";
 			this.mnuNewClass.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewClass.Text = "&Class";
@@ -269,7 +269,7 @@
 			// 
 			// mnuNewStructure
 			// 
-			this.mnuNewStructure.Image = global::NClass.DiagramEditor.Properties.Resources.Structure;
+			this.mnuNewStructure.Image = global::EnClass.DiagramEditor.Properties.Resources.Structure;
 			this.mnuNewStructure.Name = "mnuNewStructure";
 			this.mnuNewStructure.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewStructure.Text = "&Structure";
@@ -277,7 +277,7 @@
 			// 
 			// mnuNewInterface
 			// 
-			this.mnuNewInterface.Image = global::NClass.DiagramEditor.Properties.Resources.Interface32;
+			this.mnuNewInterface.Image = global::EnClass.DiagramEditor.Properties.Resources.Interface32;
 			this.mnuNewInterface.Name = "mnuNewInterface";
 			this.mnuNewInterface.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewInterface.Text = "&Interface";
@@ -285,7 +285,7 @@
 			// 
 			// mnuNewEnum
 			// 
-			this.mnuNewEnum.Image = global::NClass.DiagramEditor.Properties.Resources.Enum;
+			this.mnuNewEnum.Image = global::EnClass.DiagramEditor.Properties.Resources.Enum;
 			this.mnuNewEnum.Name = "mnuNewEnum";
 			this.mnuNewEnum.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewEnum.Text = "&Enum";
@@ -293,7 +293,7 @@
 			// 
 			// mnuNewDelegate
 			// 
-			this.mnuNewDelegate.Image = global::NClass.DiagramEditor.Properties.Resources.Delegate;
+			this.mnuNewDelegate.Image = global::EnClass.DiagramEditor.Properties.Resources.Delegate;
 			this.mnuNewDelegate.Name = "mnuNewDelegate";
 			this.mnuNewDelegate.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewDelegate.Text = "&Delegate";
@@ -301,7 +301,7 @@
 			// 
 			// mnuNewComment
 			// 
-			this.mnuNewComment.Image = global::NClass.DiagramEditor.Properties.Resources.Comment;
+			this.mnuNewComment.Image = global::EnClass.DiagramEditor.Properties.Resources.Comment;
 			this.mnuNewComment.Name = "mnuNewComment";
 			this.mnuNewComment.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewComment.Text = "Commen&t";
@@ -314,7 +314,7 @@
 			// 
 			// mnuNewAssociation
 			// 
-			this.mnuNewAssociation.Image = global::NClass.DiagramEditor.Properties.Resources.Association;
+			this.mnuNewAssociation.Image = global::EnClass.DiagramEditor.Properties.Resources.Association;
 			this.mnuNewAssociation.Name = "mnuNewAssociation";
 			this.mnuNewAssociation.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewAssociation.Text = "&Association";
@@ -322,7 +322,7 @@
 			// 
 			// mnuNewComposition
 			// 
-			this.mnuNewComposition.Image = global::NClass.DiagramEditor.Properties.Resources.Composition;
+			this.mnuNewComposition.Image = global::EnClass.DiagramEditor.Properties.Resources.Composition;
 			this.mnuNewComposition.Name = "mnuNewComposition";
 			this.mnuNewComposition.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewComposition.Text = "C&omposition";
@@ -330,7 +330,7 @@
 			// 
 			// mnuNewAggregation
 			// 
-			this.mnuNewAggregation.Image = global::NClass.DiagramEditor.Properties.Resources.Aggregation;
+			this.mnuNewAggregation.Image = global::EnClass.DiagramEditor.Properties.Resources.Aggregation;
 			this.mnuNewAggregation.Name = "mnuNewAggregation";
 			this.mnuNewAggregation.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewAggregation.Text = "A&ggregation";
@@ -338,7 +338,7 @@
 			// 
 			// mnuNewGeneralization
 			// 
-			this.mnuNewGeneralization.Image = global::NClass.DiagramEditor.Properties.Resources.Generalization;
+			this.mnuNewGeneralization.Image = global::EnClass.DiagramEditor.Properties.Resources.Generalization;
 			this.mnuNewGeneralization.Name = "mnuNewGeneralization";
 			this.mnuNewGeneralization.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewGeneralization.Text = "Genera&lization";
@@ -346,7 +346,7 @@
 			// 
 			// mnuNewRealization
 			// 
-			this.mnuNewRealization.Image = global::NClass.DiagramEditor.Properties.Resources.Realization;
+			this.mnuNewRealization.Image = global::EnClass.DiagramEditor.Properties.Resources.Realization;
 			this.mnuNewRealization.Name = "mnuNewRealization";
 			this.mnuNewRealization.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewRealization.Text = "&Realization";
@@ -354,7 +354,7 @@
 			// 
 			// mnuNewDependency
 			// 
-			this.mnuNewDependency.Image = global::NClass.DiagramEditor.Properties.Resources.Dependency;
+			this.mnuNewDependency.Image = global::EnClass.DiagramEditor.Properties.Resources.Dependency;
 			this.mnuNewDependency.Name = "mnuNewDependency";
 			this.mnuNewDependency.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewDependency.Text = "&Dependency";
@@ -362,7 +362,7 @@
 			// 
 			// mnuNewNesting
 			// 
-			this.mnuNewNesting.Image = global::NClass.DiagramEditor.Properties.Resources.Nesting;
+			this.mnuNewNesting.Image = global::EnClass.DiagramEditor.Properties.Resources.Nesting;
 			this.mnuNewNesting.Name = "mnuNewNesting";
 			this.mnuNewNesting.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewNesting.Text = "&Nesting";
@@ -370,7 +370,7 @@
 			// 
 			// mnuNewCommentRelationship
 			// 
-			this.mnuNewCommentRelationship.Image = global::NClass.DiagramEditor.Properties.Resources.CommentRel;
+			this.mnuNewCommentRelationship.Image = global::EnClass.DiagramEditor.Properties.Resources.CommentRel;
 			this.mnuNewCommentRelationship.Name = "mnuNewCommentRelationship";
 			this.mnuNewCommentRelationship.Size = new System.Drawing.Size(191, 22);
 			this.mnuNewCommentRelationship.Text = "Co&mment Relationship";
@@ -383,7 +383,7 @@
             this.mnuShowParameters,
             this.mnuShowParameterNames,
             this.mnuShowInitialValue});
-			this.mnuMembersFormat.Image = global::NClass.DiagramEditor.Properties.Resources.Format;
+			this.mnuMembersFormat.Image = global::EnClass.DiagramEditor.Properties.Resources.Format;
 			this.mnuMembersFormat.Name = "mnuMembersFormat";
 			this.mnuMembersFormat.Size = new System.Drawing.Size(170, 22);
 			this.mnuMembersFormat.Text = "&Member\'s Format";
@@ -423,7 +423,7 @@
 			// 
 			// mnuGenerateCode
 			// 
-			this.mnuGenerateCode.Image = global::NClass.DiagramEditor.Properties.Resources.CodeGenerator;
+			this.mnuGenerateCode.Image = global::EnClass.DiagramEditor.Properties.Resources.CodeGenerator;
 			this.mnuGenerateCode.Name = "mnuGenerateCode";
 			this.mnuGenerateCode.Size = new System.Drawing.Size(170, 22);
 			this.mnuGenerateCode.Text = "&Generate Code...";
@@ -431,7 +431,7 @@
 			// 
 			// mnuSaveAsImage
 			// 
-			this.mnuSaveAsImage.Image = global::NClass.DiagramEditor.Properties.Resources.Image;
+			this.mnuSaveAsImage.Image = global::EnClass.DiagramEditor.Properties.Resources.Image;
 			this.mnuSaveAsImage.Name = "mnuSaveAsImage";
 			this.mnuSaveAsImage.Size = new System.Drawing.Size(170, 22);
 			this.mnuSaveAsImage.Text = "&Save As Image...";
@@ -439,7 +439,7 @@
 			// 
 			// mnuAlignTop
 			// 
-			this.mnuAlignTop.Image = global::NClass.DiagramEditor.Properties.Resources.AlignTop;
+			this.mnuAlignTop.Image = global::EnClass.DiagramEditor.Properties.Resources.AlignTop;
 			this.mnuAlignTop.Name = "mnuAlignTop";
 			this.mnuAlignTop.Size = new System.Drawing.Size(195, 22);
 			this.mnuAlignTop.Text = "Align &Top";
@@ -447,7 +447,7 @@
 			// 
 			// mnuAlignLeft
 			// 
-			this.mnuAlignLeft.Image = global::NClass.DiagramEditor.Properties.Resources.AlignLeft;
+			this.mnuAlignLeft.Image = global::EnClass.DiagramEditor.Properties.Resources.AlignLeft;
 			this.mnuAlignLeft.Name = "mnuAlignLeft";
 			this.mnuAlignLeft.Size = new System.Drawing.Size(195, 22);
 			this.mnuAlignLeft.Text = "Align &Left";
@@ -455,7 +455,7 @@
 			// 
 			// mnuAlignBottom
 			// 
-			this.mnuAlignBottom.Image = global::NClass.DiagramEditor.Properties.Resources.AlignBottom;
+			this.mnuAlignBottom.Image = global::EnClass.DiagramEditor.Properties.Resources.AlignBottom;
 			this.mnuAlignBottom.Name = "mnuAlignBottom";
 			this.mnuAlignBottom.Size = new System.Drawing.Size(195, 22);
 			this.mnuAlignBottom.Text = "Align &Bottom";
@@ -463,7 +463,7 @@
 			// 
 			// mnuAlignRight
 			// 
-			this.mnuAlignRight.Image = global::NClass.DiagramEditor.Properties.Resources.AlignRight;
+			this.mnuAlignRight.Image = global::EnClass.DiagramEditor.Properties.Resources.AlignRight;
 			this.mnuAlignRight.Name = "mnuAlignRight";
 			this.mnuAlignRight.Size = new System.Drawing.Size(195, 22);
 			this.mnuAlignRight.Text = "Align &Right";
@@ -471,7 +471,7 @@
 			// 
 			// mnuAlignHorizontal
 			// 
-			this.mnuAlignHorizontal.Image = global::NClass.DiagramEditor.Properties.Resources.AlignHorizontal;
+			this.mnuAlignHorizontal.Image = global::EnClass.DiagramEditor.Properties.Resources.AlignHorizontal;
 			this.mnuAlignHorizontal.Name = "mnuAlignHorizontal";
 			this.mnuAlignHorizontal.Size = new System.Drawing.Size(195, 22);
 			this.mnuAlignHorizontal.Text = "Align &Horizontal Center";
@@ -479,7 +479,7 @@
 			// 
 			// mnuAlignVertical
 			// 
-			this.mnuAlignVertical.Image = global::NClass.DiagramEditor.Properties.Resources.AlignVertical;
+			this.mnuAlignVertical.Image = global::EnClass.DiagramEditor.Properties.Resources.AlignVertical;
 			this.mnuAlignVertical.Name = "mnuAlignVertical";
 			this.mnuAlignVertical.Size = new System.Drawing.Size(195, 22);
 			this.mnuAlignVertical.Text = "Align &Vertical Center";
@@ -487,7 +487,7 @@
 			// 
 			// mnuAutoLayout
 			// 
-			this.mnuAutoLayout.Image = global::NClass.DiagramEditor.Properties.Resources.AutoLayout;
+			this.mnuAutoLayout.Image = global::EnClass.DiagramEditor.Properties.Resources.AutoLayout;
 			this.mnuAutoLayout.Name = "mnuAutoLayout";
 			this.mnuAutoLayout.Size = new System.Drawing.Size(161, 22);
 			this.mnuAutoLayout.Text = "Auto &Layout";
@@ -495,7 +495,7 @@
 			// 
 			// mnuCollapseAll
 			// 
-			this.mnuCollapseAll.Image = global::NClass.DiagramEditor.Properties.Resources.CollapseAll;
+			this.mnuCollapseAll.Image = global::EnClass.DiagramEditor.Properties.Resources.CollapseAll;
 			this.mnuCollapseAll.Name = "mnuCollapseAll";
 			this.mnuCollapseAll.Size = new System.Drawing.Size(161, 22);
 			this.mnuCollapseAll.Text = "&Collapse All";
@@ -503,7 +503,7 @@
 			// 
 			// mnuExpandAll
 			// 
-			this.mnuExpandAll.Image = global::NClass.DiagramEditor.Properties.Resources.ExpandAll;
+			this.mnuExpandAll.Image = global::EnClass.DiagramEditor.Properties.Resources.ExpandAll;
 			this.mnuExpandAll.Name = "mnuExpandAll";
 			this.mnuExpandAll.Size = new System.Drawing.Size(161, 22);
 			this.mnuExpandAll.Text = "&Expand All";
@@ -512,7 +512,7 @@
 			// toolNewClass
 			// 
 			this.toolNewClass.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewClass.Image = global::NClass.DiagramEditor.Properties.Resources.Class;
+			this.toolNewClass.Image = global::EnClass.DiagramEditor.Properties.Resources.Class;
 			this.toolNewClass.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewClass.Name = "toolNewClass";
 			this.toolNewClass.Size = new System.Drawing.Size(23, 22);
@@ -521,7 +521,7 @@
 			// toolNewStructure
 			// 
 			this.toolNewStructure.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewStructure.Image = global::NClass.DiagramEditor.Properties.Resources.Structure;
+			this.toolNewStructure.Image = global::EnClass.DiagramEditor.Properties.Resources.Structure;
 			this.toolNewStructure.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewStructure.Name = "toolNewStructure";
 			this.toolNewStructure.Size = new System.Drawing.Size(23, 22);
@@ -530,7 +530,7 @@
 			// toolNewInterface
 			// 
 			this.toolNewInterface.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewInterface.Image = global::NClass.DiagramEditor.Properties.Resources.Interface32;
+			this.toolNewInterface.Image = global::EnClass.DiagramEditor.Properties.Resources.Interface32;
 			this.toolNewInterface.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewInterface.Name = "toolNewInterface";
 			this.toolNewInterface.Size = new System.Drawing.Size(23, 22);
@@ -539,7 +539,7 @@
 			// toolNewEnum
 			// 
 			this.toolNewEnum.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewEnum.Image = global::NClass.DiagramEditor.Properties.Resources.Enum;
+			this.toolNewEnum.Image = global::EnClass.DiagramEditor.Properties.Resources.Enum;
 			this.toolNewEnum.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewEnum.Name = "toolNewEnum";
 			this.toolNewEnum.Size = new System.Drawing.Size(23, 22);
@@ -548,7 +548,7 @@
 			// toolNewDelegate
 			// 
 			this.toolNewDelegate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewDelegate.Image = global::NClass.DiagramEditor.Properties.Resources.Delegate;
+			this.toolNewDelegate.Image = global::EnClass.DiagramEditor.Properties.Resources.Delegate;
 			this.toolNewDelegate.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewDelegate.Name = "toolNewDelegate";
 			this.toolNewDelegate.Size = new System.Drawing.Size(23, 22);
@@ -557,7 +557,7 @@
 			// toolNewComment
 			// 
 			this.toolNewComment.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewComment.Image = global::NClass.DiagramEditor.Properties.Resources.Comment;
+			this.toolNewComment.Image = global::EnClass.DiagramEditor.Properties.Resources.Comment;
 			this.toolNewComment.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewComment.Name = "toolNewComment";
 			this.toolNewComment.Size = new System.Drawing.Size(23, 22);
@@ -566,7 +566,7 @@
 			// toolNewAssociation
 			// 
 			this.toolNewAssociation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewAssociation.Image = global::NClass.DiagramEditor.Properties.Resources.Association;
+			this.toolNewAssociation.Image = global::EnClass.DiagramEditor.Properties.Resources.Association;
 			this.toolNewAssociation.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewAssociation.Name = "toolNewAssociation";
 			this.toolNewAssociation.Size = new System.Drawing.Size(23, 22);
@@ -575,7 +575,7 @@
 			// toolNewComposition
 			// 
 			this.toolNewComposition.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewComposition.Image = global::NClass.DiagramEditor.Properties.Resources.Composition;
+			this.toolNewComposition.Image = global::EnClass.DiagramEditor.Properties.Resources.Composition;
 			this.toolNewComposition.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewComposition.Name = "toolNewComposition";
 			this.toolNewComposition.Size = new System.Drawing.Size(23, 22);
@@ -584,7 +584,7 @@
 			// toolNewAggregation
 			// 
 			this.toolNewAggregation.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewAggregation.Image = global::NClass.DiagramEditor.Properties.Resources.Aggregation;
+			this.toolNewAggregation.Image = global::EnClass.DiagramEditor.Properties.Resources.Aggregation;
 			this.toolNewAggregation.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewAggregation.Name = "toolNewAggregation";
 			this.toolNewAggregation.Size = new System.Drawing.Size(23, 22);
@@ -593,7 +593,7 @@
 			// toolNewGeneralization
 			// 
 			this.toolNewGeneralization.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewGeneralization.Image = global::NClass.DiagramEditor.Properties.Resources.Generalization;
+			this.toolNewGeneralization.Image = global::EnClass.DiagramEditor.Properties.Resources.Generalization;
 			this.toolNewGeneralization.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewGeneralization.Name = "toolNewGeneralization";
 			this.toolNewGeneralization.Size = new System.Drawing.Size(23, 22);
@@ -602,7 +602,7 @@
 			// toolNewRealization
 			// 
 			this.toolNewRealization.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewRealization.Image = global::NClass.DiagramEditor.Properties.Resources.Realization;
+			this.toolNewRealization.Image = global::EnClass.DiagramEditor.Properties.Resources.Realization;
 			this.toolNewRealization.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewRealization.Name = "toolNewRealization";
 			this.toolNewRealization.Size = new System.Drawing.Size(23, 22);
@@ -611,7 +611,7 @@
 			// toolNewDependency
 			// 
 			this.toolNewDependency.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewDependency.Image = global::NClass.DiagramEditor.Properties.Resources.Dependency;
+			this.toolNewDependency.Image = global::EnClass.DiagramEditor.Properties.Resources.Dependency;
 			this.toolNewDependency.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewDependency.Name = "toolNewDependency";
 			this.toolNewDependency.Size = new System.Drawing.Size(23, 22);
@@ -620,7 +620,7 @@
 			// toolNewNesting
 			// 
 			this.toolNewNesting.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewNesting.Image = global::NClass.DiagramEditor.Properties.Resources.Nesting;
+			this.toolNewNesting.Image = global::EnClass.DiagramEditor.Properties.Resources.Nesting;
 			this.toolNewNesting.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewNesting.Name = "toolNewNesting";
 			this.toolNewNesting.Size = new System.Drawing.Size(23, 22);
@@ -629,7 +629,7 @@
 			// toolNewCommentRelationship
 			// 
 			this.toolNewCommentRelationship.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolNewCommentRelationship.Image = global::NClass.DiagramEditor.Properties.Resources.CommentRel;
+			this.toolNewCommentRelationship.Image = global::EnClass.DiagramEditor.Properties.Resources.CommentRel;
 			this.toolNewCommentRelationship.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolNewCommentRelationship.Name = "toolNewCommentRelationship";
 			this.toolNewCommentRelationship.Size = new System.Drawing.Size(23, 22);
@@ -639,7 +639,7 @@
 			// 
 			this.toolDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.toolDelete.Enabled = false;
-			this.toolDelete.Image = global::NClass.DiagramEditor.Properties.Resources.Delete;
+			this.toolDelete.Image = global::EnClass.DiagramEditor.Properties.Resources.Delete;
 			this.toolDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolDelete.Name = "toolDelete";
 			this.toolDelete.Size = new System.Drawing.Size(23, 22);
