@@ -72,6 +72,7 @@
     <Compile Include="Dialogs\CodingLanguageDialog.Designer.cs">
       <DependentUpon>CodingLanguageDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimplePlugin.cs" />
     <Compile Include="NClassEnvironment.cs" />
     <Compile Include="Plugin.cs" />
