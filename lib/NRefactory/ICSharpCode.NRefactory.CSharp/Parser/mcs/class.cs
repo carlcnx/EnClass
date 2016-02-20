@@ -36,7 +36,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 #endif
 
-namespace Mono.CSharp
+namespace ICSharpCode.NRefactory.MonoCSharp
 {
 	//
 	// General types container, used as a base class for all constructs which can hold types
@@ -44,7 +44,6 @@ namespace Mono.CSharp
 	public abstract class TypeContainer : MemberCore
 	{
 		public readonly MemberKind Kind;
-		public readonly string Basename;
 
 		protected List<TypeContainer> containers;
 
@@ -62,9 +61,6 @@ namespace Mono.CSharp
 			: base (parent, name, attrs)
 		{
 			this.Kind = kind;
-			if (name != null)
-				this.Basename = name.Basename;
-
 			defined_names = new Dictionary<string, MemberCore> ();
 		}
 
@@ -111,7 +107,7 @@ namespace Mono.CSharp
 		public virtual void AddPartial (TypeDefinition next_part)
 		{
 			MemberCore mc;
-			(PartialContainer ?? this).defined_names.TryGetValue (next_part.Basename, out mc);
+			(PartialContainer ?? this).defined_names.TryGetValue (next_part.MemberName.Basename, out mc);
 
 			AddPartial (next_part, mc as TypeDefinition);
 		}
@@ -363,12 +359,8 @@ namespace Mono.CSharp
 			return MemberName.GetSignatureForError ();
 		}
 
-		public string GetSignatureForMetadata ()
+		public virtual string GetSignatureForMetadata ()
 		{
-			if (Parent is TypeDefinition) {
-				return Parent.GetSignatureForMetadata () + "+" + TypeNameParser.Escape (MemberName.Basename);
-			}
-
 			var sb = new StringBuilder ();
 			CreateMetadataName (sb);
 			return sb.ToString ();
@@ -380,7 +372,7 @@ namespace Mono.CSharp
 				containers.Remove (cont);
 
 			var tc = Parent == Module ? Module : this;
-			tc.defined_names.Remove (cont.Basename);
+			tc.defined_names.Remove (cont.MemberName.Basename);
 		}
 
 		public virtual void VerifyMembers ()
@@ -456,7 +448,7 @@ namespace Mono.CSharp
 				return tc.GetSignatureForError ();
 			}
 
-			public ExtensionMethodCandidates LookupExtensionMethod (TypeSpec extensionType, string name, int arity)
+			public ExtensionMethodCandidates LookupExtensionMethod (string name, int arity)
 			{
 				return null;
 			}
@@ -553,7 +545,8 @@ namespace Mono.CSharp
 		public int AnonymousMethodsCounter;
 		public int MethodGroupsCounter;
 
-		static readonly string[] attribute_targets = new string[] { "type" };
+		static readonly string[] attribute_targets = new [] { "type" };
+		static readonly string[] attribute_targets_primary = new [] { "type", "method" };
 
 		/// <remarks>
 		///  The pending methods that need to be implemented
@@ -738,6 +731,10 @@ namespace Mono.CSharp
 
 		public ParametersCompiled PrimaryConstructorParameters { get; set; }
 
+		public Arguments PrimaryConstructorBaseArguments { get; set; }
+
+		public Location PrimaryConstructorBaseArgumentsStart { get; set; }
+
 		public TypeParameters TypeParametersAll {
 			get {
 				return all_type_parameters;
@@ -746,7 +743,7 @@ namespace Mono.CSharp
 
 		public override string[] ValidAttributeTargets {
 			get {
-				return attribute_targets;
+				return PrimaryConstructorParameters != null ? attribute_targets_primary : attribute_targets;
 			}
 		}
 
@@ -790,7 +787,7 @@ namespace Mono.CSharp
 
 		public override void AddTypeContainer (TypeContainer tc)
 		{
-			AddNameToContainer (tc, tc.Basename);
+			AddNameToContainer (tc, tc.MemberName.Basename);
 
 			base.AddTypeContainer (tc);
 		}
@@ -835,9 +832,6 @@ namespace Mono.CSharp
 			if (symbol is TypeParameter) {
 				Report.Error (692, symbol.Location,
 					"Duplicate type parameter `{0}'", symbol.GetSignatureForError ());
-			} else if (symbol is PrimaryConstructorField && mc is TypeParameter) {
-				Report.Error (9003, symbol.Location, "Primary constructor of type `{0}' has parameter of same name as type parameter `{1}'",
-					symbol.Parent.GetSignatureForError (), symbol.GetSignatureForError ());
 			} else {
 				Report.Error (102, symbol.Location,
 					"The type `{0}' already contains a definition for `{1}'",
@@ -916,6 +910,21 @@ namespace Mono.CSharp
 
 		public override void ApplyAttributeBuilder (Attribute a, MethodSpec ctor, byte[] cdata, PredefinedAttributes pa)
 		{
+			if (a.Target == AttributeTargets.Method) {
+				foreach (var m in members) {
+					var c = m as Constructor;
+					if (c == null)
+						continue;
+
+					if (c.IsPrimaryConstructor) {
+						c.ApplyAttributeBuilder (a, ctor, cdata, pa);
+						return;
+					}
+				}
+
+				throw new InternalErrorException ();
+			}
+
 			if (has_normal_indexers && a.Type == pa.DefaultMember) {
 				Report.Error (646, a.Location, "Cannot specify the `DefaultMember' attribute on type containing an indexer");
 				return;
@@ -973,7 +982,7 @@ namespace Mono.CSharp
 			}
 		}
 
-		public virtual void RegisterFieldForInitialization (MemberCore field, FieldInitializer expression)
+		public void RegisterFieldForInitialization (MemberCore field, FieldInitializer expression)
 		{
 			if (IsPartialPart)
 				PartialContainer.RegisterFieldForInitialization (field, expression);
@@ -986,6 +995,13 @@ namespace Mono.CSharp
 
 				initialized_static_fields.Add (expression);
 			} else {
+				if (Kind == MemberKind.Struct) {
+					if (Compiler.Settings.Version != LanguageVersion.Experimental) {
+						Report.Error (573, expression.Location, "'{0}': Structs cannot have instance property or field initializers",
+							GetSignatureForError ());
+					}
+				}
+
 				if (initialized_fields == null)
 					initialized_fields = new List<FieldInitializer> (4);
 
@@ -1056,7 +1072,7 @@ namespace Mono.CSharp
 				//
 				// Field is re-initialized to its default value => removed
 				//
-				if (fi.IsDefaultInitializer && ec.Module.Compiler.Settings.Optimize)
+				if (fi.IsDefaultInitializer && Kind != MemberKind.Struct && ec.Module.Compiler.Settings.Optimize)
 					continue;
 
 				ec.AssignmentInfoOffset += fi.AssignmentOffset;
@@ -1127,6 +1143,15 @@ namespace Mono.CSharp
 
 				ns = ns.Parent;
 			}
+		}
+
+		public override string GetSignatureForMetadata ()
+		{
+			if (Parent is TypeDefinition) {
+				return Parent.GetSignatureForMetadata () + "+" + TypeNameParser.Escape (FilterNestedName (MemberName.Basename));
+			}
+
+			return base.GetSignatureForMetadata ();
 		}
 
 		public virtual void SetBaseTypes (List<FullNamedExpression> baseTypes)
@@ -1301,7 +1326,7 @@ namespace Mono.CSharp
 				CreateMetadataName (sb);
 				TypeBuilder = Module.CreateBuilder (sb.ToString (), TypeAttr, type_size);
 			} else {
-				TypeBuilder = parent_def.TypeBuilder.DefineNestedType (Basename, TypeAttr, null, type_size);
+				TypeBuilder = parent_def.TypeBuilder.DefineNestedType (FilterNestedName (MemberName.Basename), TypeAttr, null, type_size);
 			}
 
 			if (DeclaringAssembly.Importer != null)
@@ -1329,6 +1354,18 @@ namespace Mono.CSharp
 			}
 
 			return true;
+		}
+
+		public static string FilterNestedName (string name)
+		{
+			//
+			// SRE API does not handle namespaces and types separately but
+			// determine that from '.' in name. That's problematic because 
+			// dot is valid character for type name. By replacing any '.'
+			// in name we avoid any ambiguities and never emit metadata
+			// namespace for nested types
+			//
+			return name.Replace ('.', '_');
 		}
 
 		string[] CreateTypeParameters (TypeParameters parentAllTypeParameters)
@@ -1379,7 +1416,7 @@ namespace Mono.CSharp
 
 		public SourceMethodBuilder CreateMethodSymbolEntry ()
 		{
-			if (Module.DeclaringAssembly.SymbolWriter == null)
+			if (Module.DeclaringAssembly.SymbolWriter == null || (ModFlags & Modifiers.DEBUGGER_HIDDEN) != 0)
 				return null;
 
 			var source_file = GetCompilationSourceFile ();
@@ -1549,7 +1586,7 @@ namespace Mono.CSharp
 
 				if (PrimaryConstructorParameters != null) {
 					if (PartialContainer.PrimaryConstructorParameters != null) {
-						Report.Error (9001, Location, "Only one part of a partial type can declare primary constructor parameters");
+						Report.Error (8036, Location, "Only one part of a partial type can declare primary constructor parameters");
 					} else {
 						PartialContainer.PrimaryConstructorParameters = PrimaryConstructorParameters;
 					}
@@ -1582,6 +1619,10 @@ namespace Mono.CSharp
 			}
 
 			if (iface_exprs != null) {
+				if (!PrimaryConstructorBaseArgumentsStart.IsNull) {
+					Report.Error (8049, PrimaryConstructorBaseArgumentsStart, "Implemented interfaces cannot have arguments");
+				}
+
 				foreach (var iface_type in iface_exprs) {
 					// Prevents a crash, the interface might not have been resolved: 442144
 					if (iface_type == null)
@@ -1610,8 +1651,12 @@ namespace Mono.CSharp
 			// defined after current container
 			//
 			if (class_partial_parts != null) {
-				foreach (var pp in class_partial_parts)
+				foreach (var pp in class_partial_parts) {
+					if (pp.PrimaryConstructorBaseArguments != null)
+						PrimaryConstructorBaseArguments = pp.PrimaryConstructorBaseArguments;
+
 					pp.DoDefineBaseType ();
+				}
 
 			}
 
@@ -1793,12 +1838,12 @@ namespace Mono.CSharp
 		{
 			base.RemoveContainer (cont);
 			Members.Remove (cont);
-			Cache.Remove (cont.Basename);
+			Cache.Remove (cont.MemberName.Basename);
 		}
 
 		protected virtual bool DoResolveTypeParameters ()
 		{
-			var tparams = CurrentTypeParameters;
+			var tparams = MemberName.TypeParameters;
 			if (tparams == null)
 				return true;
 
@@ -1809,6 +1854,20 @@ namespace Mono.CSharp
 				if (!tp.ResolveConstraints (base_context)) {
 					error = true;
 					return false;
+				}
+
+				if (IsPartialPart) {
+					var pc_tp = PartialContainer.CurrentTypeParameters [i];
+
+					tp.Create (spec, this);
+					tp.Define (pc_tp);
+
+					if (tp.OptAttributes != null) {
+						if (pc_tp.OptAttributes == null)
+							pc_tp.OptAttributes = tp.OptAttributes;
+						else
+							pc_tp.OptAttributes.Attrs.AddRange (tp.OptAttributes.Attrs);
+					}
 				}
 			}
 
@@ -2562,7 +2621,7 @@ namespace Mono.CSharp
 		{
 		}
 
-		public Arguments PrimaryConstructorBaseArguments { get; set; }
+		public ToplevelBlock PrimaryConstructorBlock { get; set; }
 
 		protected override TypeAttributes TypeAttr {
 			get {
@@ -2592,12 +2651,6 @@ namespace Mono.CSharp
 					return;
 				}
 
-				if (symbol is PrimaryConstructorField) {
-					Report.Error (9004, symbol.Location, "Primary constructor of type `{0}' has parameter of same name as containing type",
-						symbol.Parent.GetSignatureForError ());
-					return;
-				}
-			
 				InterfaceMemberBase imb = symbol as InterfaceMemberBase;
 				if (imb == null || !imb.IsExplicitImpl) {
 					Report.SymbolRelatedToPreviousError (this);
@@ -2641,23 +2694,32 @@ namespace Mono.CSharp
 			// The default static constructor is private
 
 			Modifiers mods;
+			ParametersCompiled parameters = null;
 			if (is_static) {
 				mods = Modifiers.STATIC | Modifiers.PRIVATE;
+				parameters = ParametersCompiled.EmptyReadOnlyParameters;
 			} else {
 				mods = ((ModFlags & Modifiers.ABSTRACT) != 0) ? Modifiers.PROTECTED : Modifiers.PUBLIC;
+				parameters = PrimaryConstructorParameters ?? ParametersCompiled.EmptyReadOnlyParameters;
 			}
 
-			var c = new Constructor (this, MemberName.Name, mods, null, PrimaryConstructorParameters ?? ParametersCompiled.EmptyReadOnlyParameters, Location);
+			var c = new Constructor (this, MemberName.Name, mods, null, parameters, Location);
 			if (Kind == MemberKind.Class)
 				c.Initializer = new GeneratedBaseInitializer (Location, PrimaryConstructorBaseArguments);
 
-			if (PrimaryConstructorParameters != null)
+			if (PrimaryConstructorParameters != null && !is_static) {
 				c.IsPrimaryConstructor = true;
+				c.caching_flags |= Flags.MethodOverloadsExist;
+			}
 			
 			AddConstructor (c, true);
-			c.Block = new ToplevelBlock (Compiler, c.ParameterInfo, Location) {
-				IsCompilerGenerated = true
-			};
+			if (PrimaryConstructorBlock == null) {
+				c.Block = new ToplevelBlock (Compiler, parameters, Location) {
+					IsCompilerGenerated = true
+				};
+			} else {
+				c.Block = PrimaryConstructorBlock;
+			}
 
 			return c;
 		}
@@ -2667,15 +2729,22 @@ namespace Mono.CSharp
 			CheckProtectedModifier ();
 
 			if (PrimaryConstructorParameters != null) {
+
 				foreach (Parameter p in PrimaryConstructorParameters.FixedParameters) {
-					if ((p.ModFlags & Parameter.Modifier.RefOutMask) != 0)
-						continue;
+					if (p.Name == MemberName.Name) {
+						Report.Error (8039, p.Location, "Primary constructor of type `{0}' has parameter of same name as containing type",
+							GetSignatureForError ());
+					}
 
-					var f = new PrimaryConstructorField (this, p);
-					AddField (f);
-
-					generated_primary_constructor.Block.AddStatement (
-						new StatementExpression (new PrimaryConstructorAssign (f, p), p.Location));
+					if (CurrentTypeParameters != null) {
+						for (int i = 0; i < CurrentTypeParameters.Count; ++i) {
+							var tp = CurrentTypeParameters [i];
+							if (p.Name == tp.Name) {
+								Report.Error (8038, p.Location, "Primary constructor of type `{0}' has parameter of same name as type parameter `{1}'",
+									GetSignatureForError (), p.GetSignatureForError ());
+							}
+						}
+					}
 				}
 			}
 
@@ -3045,10 +3114,14 @@ namespace Mono.CSharp
 
 		protected override bool DoDefineMembers ()
 		{
-			if (PrimaryConstructorParameters != null)
-				generated_primary_constructor = DefineDefaultConstructor (false);
+			var res = base.DoDefineMembers ();
 
-			return base.DoDefineMembers ();
+			if (PrimaryConstructorParameters != null || (initialized_fields != null && !HasUserDefaultConstructor ())) {
+				generated_primary_constructor = DefineDefaultConstructor (false);
+				generated_primary_constructor.Define ();
+			}
+
+			return res;
 		}
 
 		public override void Emit ()
@@ -3056,6 +3129,20 @@ namespace Mono.CSharp
 			CheckStructCycles ();
 
 			base.Emit ();
+		}
+
+		bool HasUserDefaultConstructor ()
+		{
+			foreach (var m in PartialContainer.Members) {
+				var c = m as Constructor;
+				if (c == null)
+					continue;
+
+				if (!c.IsStatic && c.ParameterInfo.IsEmpty)
+					return true;
+			}
+
+			return false;
 		}
 
 		public override bool IsUnmanagedType ()
@@ -3110,17 +3197,6 @@ namespace Mono.CSharp
 			base_type = Compiler.BuiltinTypes.ValueType;
 			return ifaces;
 		}
-
-		public override void RegisterFieldForInitialization (MemberCore field, FieldInitializer expression)
-		{
-			if ((field.ModFlags & Modifiers.STATIC) == 0) {
-				Report.Error (573, field.Location, "`{0}': Structs cannot have instance field initializers",
-					field.GetSignatureForError ());
-				return;
-			}
-			base.RegisterFieldForInitialization (field, expression);
-		}
-
 	}
 
 	/// <summary>
@@ -3666,7 +3742,7 @@ namespace Mono.CSharp
 		public override string GetSignatureForDocumentation ()
 		{
 			if (IsExplicitImpl)
-				return Parent.GetSignatureForDocumentation () + "." + InterfaceType.GetExplicitNameSignatureForDocumentation () + "#" + ShortName;
+				return Parent.GetSignatureForDocumentation () + "." + InterfaceType.GetSignatureForDocumentation (true) + "#" + ShortName;
 
 			return Parent.GetSignatureForDocumentation () + "." + ShortName;
 		}

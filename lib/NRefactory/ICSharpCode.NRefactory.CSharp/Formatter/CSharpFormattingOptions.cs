@@ -27,9 +27,6 @@
 using System;
 using System.Reflection;
 using System.Linq;
-using System.Xml;
-using System.Text;
-
 
 namespace ICSharpCode.NRefactory.CSharp
 {
@@ -960,8 +957,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		{
 		}
 
-        /*
-		public static CSharpFormattingOptions Load (string selectedFile)
+		/*public static CSharpFormattingOptions Load (FilePath selectedFile)
 		{
 			using (var stream = System.IO.File.OpenRead (selectedFile)) {
 				return Load (stream);
@@ -970,7 +966,7 @@ namespace ICSharpCode.NRefactory.CSharp
 
 		public static CSharpFormattingOptions Load (System.IO.Stream input)
 		{
-            CSharpFormattingOptions result = FormattingOptionsFactory.CreateMono();
+			CSharpFormattingOptions result = FormattingOptionsFactory.CreateMonoOptions ();
 			result.Name = "noname";
 			using (XmlTextReader reader = new XmlTextReader (input)) {
 				while (reader.Read ()) {
@@ -1008,12 +1004,12 @@ namespace ICSharpCode.NRefactory.CSharp
 				writer.WriteStartElement ("FormattingProfile");
 				writer.WriteAttributeString ("name", Name);
 				foreach (PropertyInfo info in typeof (CSharpFormattingOptions).GetProperties ()) {
-					//if (info.GetCustomAttributes (false).Any (o => o.GetType () == typeof(ItemPropertyAttribute))) {
+					if (info.GetCustomAttributes (false).Any (o => o.GetType () == typeof(ItemPropertyAttribute))) {
 						writer.WriteStartElement ("Property");
 						writer.WriteAttributeString ("name", info.Name);
 						writer.WriteAttributeString ("value", info.GetValue (this, null).ToString ());
 						writer.WriteEndElement ();
-					//}
+					}
 				}
 				writer.WriteEndElement ();
 			}
@@ -1022,7 +1018,7 @@ namespace ICSharpCode.NRefactory.CSharp
 		public bool Equals (CSharpFormattingOptions other)
 		{
 			foreach (PropertyInfo info in typeof (CSharpFormattingOptions).GetProperties ()) {
-				//if (info.GetCustomAttributes (false).Any (o => o.GetType () == typeof(ItemPropertyAttribute))) {
+				if (info.GetCustomAttributes (false).Any (o => o.GetType () == typeof(ItemPropertyAttribute))) {
 					object val = info.GetValue (this, null);
 					object otherVal = info.GetValue (other, null);
 					if (val == null) {
@@ -1034,11 +1030,10 @@ namespace ICSharpCode.NRefactory.CSharp
 						//Console.WriteLine ("!equal");
 						return false;
 					}
-				//}
+				}
 			}
 			//Console.WriteLine ("== equal");
 			return true;
-		}
-        */
+		}*/
 	}
 }

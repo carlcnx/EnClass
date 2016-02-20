@@ -14,7 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Mono.CompilerServices.SymbolWriter;
 
-namespace Mono.CSharp {
+namespace ICSharpCode.NRefactory.MonoCSharp {
 
 	public class RootNamespace : Namespace {
 
@@ -70,6 +70,9 @@ namespace Mono.CSharp {
 			List<string> res = null;
 
 			foreach (var ns in all_namespaces) {
+				if (ns.Key.Length == 0)
+					continue;
+
 				var methods = ns.Value.LookupExtensionMethod (ctx, name, arity);
 				if (methods != null) {
 					if (res == null)
@@ -311,6 +314,12 @@ namespace Mono.CSharp {
 			if (arity == 0 && mode == LookupMode.Normal)
 				cached_types.Add (name, best);
 
+			if (best != null) {
+				var dep = best.GetMissingDependencies ();
+				if (dep != null)
+					ImportedTypeDefinition.Error_MissingDependency (ctx, dep, loc);
+			}
+
 			return best;
 		}
 
@@ -482,8 +491,22 @@ namespace Mono.CSharp {
 
 		public void RemoveContainer (TypeContainer tc)
 		{
-			types.Remove (tc.Basename);
-			cached_types.Remove (tc.Basename);
+			IList<TypeSpec> found;
+			if (types.TryGetValue (tc.MemberName.Name, out found)) {
+				for (int i = 0; i < found.Count; ++i) {
+					if (tc.MemberName.Arity != found [i].Arity)
+						continue;
+
+					if (found.Count == 1)
+						types.Remove (tc.MemberName.Name);
+					else
+						found.RemoveAt (i);
+
+					break;
+				}
+			}
+
+			cached_types.Remove (tc.MemberName.Basename);
 		}
 
 		public void SetBuiltinType (BuiltinTypeSpec pts)
@@ -683,12 +706,13 @@ namespace Mono.CSharp {
 
 		public new readonly NamespaceContainer Parent;
 
-		List<UsingNamespace> clauses;
+		List<UsingClause> clauses;
 
 		// Used by parsed to check for parser errors
 		public bool DeclarationFound;
 
 		Namespace[] namespace_using_table;
+		TypeSpec[] types_using_table;
 		Dictionary<string, UsingAliasNamespace> aliases;
 		public readonly MemberName RealMemberName;
 
@@ -729,7 +753,7 @@ namespace Mono.CSharp {
 			}
 		}
 
-		public List<UsingNamespace> Usings {
+		public List<UsingClause> Usings {
 			get {
 				return clauses;
 			}
@@ -743,14 +767,14 @@ namespace Mono.CSharp {
 
 		#endregion
 
-		public void AddUsing (UsingNamespace un)
+		public void AddUsing (UsingClause un)
 		{
 			if (DeclarationFound){
 				Compiler.Report.Error (1529, un.Location, "A using clause must precede all other namespace elements except extern alias declarations");
 			}
 
 			if (clauses == null)
-				clauses = new List<UsingNamespace> ();
+				clauses = new List<UsingClause> ();
 
 			clauses.Add (un);
 		}
@@ -767,7 +791,7 @@ namespace Mono.CSharp {
 		void AddAlias (UsingAliasNamespace un)
 		{
 			if (clauses == null) {
-				clauses = new List<UsingNamespace> ();
+				clauses = new List<UsingClause> ();
 			} else {
 				foreach (var entry in clauses) {
 					var a = entry as UsingAliasNamespace;
@@ -791,9 +815,8 @@ namespace Mono.CSharp {
 
 		public override void AddTypeContainer (TypeContainer tc)
 		{
-			string name = tc.Basename;
-
 			var mn = tc.MemberName;
+			var name = mn.Basename;
 			while (mn.Left != null) {
 				mn = mn.Left;
 				name = mn.Name;
@@ -858,7 +881,7 @@ namespace Mono.CSharp {
 			base.EmitContainer ();
 		}
 
-		public ExtensionMethodCandidates LookupExtensionMethod (IMemberContext invocationContext, TypeSpec extensionType, string name, int arity, int position)
+		public ExtensionMethodCandidates LookupExtensionMethod (IMemberContext invocationContext, string name, int arity, int position)
 		{
 			//
 			// Here we try to resume the search for extension method at the point
@@ -937,6 +960,20 @@ namespace Mono.CSharp {
 						candidates = a;
 					else
 						candidates.AddRange (a);
+				}
+
+				if (types_using_table != null) {
+					foreach (var t in types_using_table) {
+
+						var res = t.MemberCache.FindExtensionMethods (invocationContext, name, arity);
+						if (res == null)
+							continue;
+
+						if (candidates == null)
+							candidates = res;
+						else
+							candidates.AddRange (res);
+					}
 				}
 
 				if (candidates != null)
@@ -1124,6 +1161,52 @@ namespace Mono.CSharp {
 			return match;
 		}
 
+		public static Expression LookupStaticUsings (IMemberContext mc, string name, int arity, Location loc)
+		{
+			for (var m = mc.CurrentMemberDefinition; m != null; m = m.Parent) {
+
+				var nc = m as NamespaceContainer;
+				if (nc == null)
+					continue;
+
+				List<MemberSpec> candidates = null;
+				if (nc.types_using_table != null) {
+					foreach (var using_type in nc.types_using_table) {
+						var members = MemberCache.FindMembers (using_type, name, true);
+						if (members != null) {
+							foreach (var member in members) {
+								if ((member.Kind & MemberKind.NestedMask) != 0) {
+									// non-static nested type is included with using static
+								} else {
+									if ((member.Modifiers & Modifiers.STATIC) == 0)
+										continue;
+
+									if ((member.Modifiers & Modifiers.METHOD_EXTENSION) != 0)
+										continue;
+								}
+
+								if (arity > 0 && member.Arity != arity)
+									continue;
+
+								if (candidates == null)
+									candidates = new List<MemberSpec> ();
+
+								candidates.Add (member);
+							}
+						}
+					}
+				}
+
+				if (candidates != null) {
+					var expr = Expression.MemberLookupToExpression (mc, candidates, false, null, name, arity, Expression.MemberLookupRestrictions.None, loc);
+					if (expr != null)
+						return expr;
+				}
+			}
+
+			return null;
+		}
+
 		protected override void DefineNamespace ()
 		{
 			if (namespace_using_table == null)
@@ -1137,7 +1220,9 @@ namespace Mono.CSharp {
 			namespace_using_table = empty_namespaces;
 
 			if (clauses != null) {
-				var list = new List<Namespace> (clauses.Count);
+				List<Namespace> namespaces = null;
+				List<TypeSpec> types = null;
+
 				bool post_process_using_aliases = false;
 
 				for (int i = 0; i < clauses.Count; ++i) {
@@ -1176,21 +1261,36 @@ namespace Mono.CSharp {
 					}
 
 					var using_ns = entry.ResolvedExpression as NamespaceExpression;
-					if (using_ns == null)
-						continue;
+					if (using_ns == null) {
 
-					if (list.Contains (using_ns.Namespace)) {
-						// Ensure we don't report the warning multiple times in repl
-						clauses.RemoveAt (i--);
+						var type = entry.ResolvedExpression.Type;
 
-						Compiler.Report.Warning (105, 3, entry.Location,
-							"The using directive for `{0}' appeared previously in this namespace", using_ns.GetSignatureForError ());
+						if (types == null)
+							types = new List<TypeSpec> ();
+
+						if (types.Contains (type)) {
+							Warning_DuplicateEntry (entry);
+						} else {
+							types.Add (type);
+						}
 					} else {
-						list.Add (using_ns.Namespace);
+						if (namespaces == null)
+							namespaces = new List<Namespace> ();
+
+						if (namespaces.Contains (using_ns.Namespace)) {
+							// Ensure we don't report the warning multiple times in repl
+							clauses.RemoveAt (i--);
+
+							Warning_DuplicateEntry (entry);
+						} else {
+							namespaces.Add (using_ns.Namespace);
+						}
 					}
 				}
 
-				namespace_using_table = list.ToArray ();
+				namespace_using_table = namespaces == null ? new Namespace [0] : namespaces.ToArray ();
+				if (types != null)
+					types_using_table = types.ToArray ();
 
 				if (post_process_using_aliases) {
 					for (int i = 0; i < clauses.Count; ++i) {
@@ -1247,19 +1347,84 @@ namespace Mono.CSharp {
 			return false;
 		}
 
+		void Warning_DuplicateEntry (UsingClause entry)
+		{
+			Compiler.Report.Warning (105, 3, entry.Location,
+				"The using directive for `{0}' appeared previously in this namespace",
+				entry.ResolvedExpression.GetSignatureForError ());
+		}
+
 		public override void Accept (StructuralVisitor visitor)
 		{
 			visitor.Visit (this);
 		}
 	}
 
-	public class UsingNamespace
+	public class UsingNamespace : UsingClause
+	{
+		public UsingNamespace (ATypeNameExpression expr, Location loc)
+			: base (expr, loc)
+		{
+		}
+
+		public override void Define (NamespaceContainer ctx)
+		{
+			base.Define (ctx);
+
+			var ns = resolved as NamespaceExpression;
+			if (ns != null)
+				return;
+
+			if (resolved != null) {
+				var compiler = ctx.Module.Compiler;
+				var type = resolved.Type;
+
+				compiler.Report.SymbolRelatedToPreviousError (type);
+				compiler.Report.Error (138, Location,
+					"A `using' directive can only be applied to namespaces but `{0}' denotes a type. Consider using a `using static' instead",
+					type.GetSignatureForError ());
+			}
+		}
+	}
+
+	public class UsingType : UsingClause
+	{
+		public UsingType (ATypeNameExpression expr, Location loc)
+			: base (expr, loc)
+		{
+		}
+
+		public override void Define (NamespaceContainer ctx)
+		{
+			base.Define (ctx);
+
+			if (resolved == null)
+				return;
+
+			var ns = resolved as NamespaceExpression;
+			if (ns != null) {
+				var compiler = ctx.Module.Compiler;
+				compiler.Report.Error (7007, Location,
+					"A 'using static' directive can only be applied to types but `{0}' denotes a namespace. Consider using a `using' directive instead",
+					ns.GetSignatureForError ());
+				return;
+			}
+
+			// TODO: Need to move it to post_process_using_aliases
+			//ObsoleteAttribute obsolete_attr = resolved.Type.GetAttributeObsolete ();
+			//if (obsolete_attr != null) {
+			//	AttributeTester.Report_ObsoleteMessage (obsolete_attr, resolved.GetSignatureForError (), Location, ctx.Compiler.Report);
+			//}
+		}
+	}
+
+	public class UsingClause
 	{
 		readonly ATypeNameExpression expr;
 		readonly Location loc;
 		protected FullNamedExpression resolved;
 
-		public UsingNamespace (ATypeNameExpression expr, Location loc)
+		public UsingClause (ATypeNameExpression expr, Location loc)
 		{
 			this.expr = expr;
 			this.loc = loc;
@@ -1300,16 +1465,7 @@ namespace Mono.CSharp {
 
 		public virtual void Define (NamespaceContainer ctx)
 		{
-			resolved = expr.ResolveAsTypeOrNamespace (ctx);
-			var ns = resolved as NamespaceExpression;
-			if (ns == null) {
-				if (resolved != null) {
-					ctx.Module.Compiler.Report.SymbolRelatedToPreviousError (resolved.Type);
-					ctx.Module.Compiler.Report.Error (138, Location,
-						"`{0}' is a type not a namespace. A using namespace directive can only be applied to namespaces",
-						GetSignatureForError ());
-				}
-			}
+			resolved = expr.ResolveAsTypeOrNamespace (ctx, false);
 		}
 		
 		public virtual void Accept (StructuralVisitor visitor)
@@ -1409,7 +1565,7 @@ namespace Mono.CSharp {
 				throw new NotImplementedException ();
 			}
 
-			public ExtensionMethodCandidates LookupExtensionMethod (TypeSpec extensionType, string name, int arity)
+			public ExtensionMethodCandidates LookupExtensionMethod (string name, int arity)
 			{
 				return null;
 			}
@@ -1474,7 +1630,7 @@ namespace Mono.CSharp {
 			// We achieve that by introducing alias-context which redirect any local
 			// namespace or type resolve calls to parent namespace
 			//
-			resolved = NamespaceExpression.ResolveAsTypeOrNamespace (new AliasContext (ctx));
+			resolved = NamespaceExpression.ResolveAsTypeOrNamespace (new AliasContext (ctx), false);
 		}
 		
 		public override void Accept (StructuralVisitor visitor)

@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using System.Threading;
 
 namespace ICSharpCode.NRefactory.TypeSystem.Implementation
 {
@@ -88,25 +89,15 @@ namespace ICSharpCode.NRefactory.TypeSystem.Implementation
 		[Obsolete("Use the FullTypeName property instead. GetClassTypeReference now supports nested types, where the Namespace/Name/TPC tripel isn't sufficient for identifying the type.")]
 		public int TypeParameterCount { get { return fullTypeName.TypeParameterCount; } }
 
-		[NonSerialized]
-		bool alreadyTriedToLookupInDifferentAssembly;
-
-		IType ResolveUsingTypeContext (ITypeResolveContext context)
+		IType ResolveInAllAssemblies(ITypeResolveContext context)
 		{
-			IType type = null;
-
-			if (context.CurrentAssembly != null) {
-				type = context.CurrentAssembly.GetTypeDefinition (fullTypeName);
+			var compilation = context.Compilation;
+			foreach (var asm in compilation.Assemblies) {
+				IType type = asm.GetTypeDefinition(fullTypeName);
+				if (type != null)
+					return type;
 			}
-			if (type == null) {
-				var compilation = context.Compilation;
-				foreach (var asm in compilation.Assemblies) {
-					type = asm.GetTypeDefinition (fullTypeName);
-					if (type != null)
-						break;
-				}
-			}
-			return type;
+			return null;
 		}
 
 		public IType Resolve(ITypeResolveContext context)
@@ -116,18 +107,25 @@ namespace ICSharpCode.NRefactory.TypeSystem.Implementation
 			
 			IType type = null;
 			if (assembly == null) {
-				type = ResolveUsingTypeContext (context);
+				// No assembly specified: look in all assemblies, but prefer the current assembly
+				if (context.CurrentAssembly != null) {
+					type = context.CurrentAssembly.GetTypeDefinition(fullTypeName);
+				}
+				if (type == null) {
+					type = ResolveInAllAssemblies(context);
+				}
 			} else {
+				// Assembly specified: only look in the specified assembly.
+				// But if that's not loaded in the compilation, allow fall back to other assemblies.
+				// (the non-loaded assembly might be a facade containing type forwarders -
+				//  for example, when referencing a portable library from a non-portable project)
 				IAssembly asm = assembly.Resolve(context);
 				if (asm != null) {
 					type = asm.GetTypeDefinition(fullTypeName);
-				}
-				if (!alreadyTriedToLookupInDifferentAssembly) {
-					alreadyTriedToLookupInDifferentAssembly = true;
-					type = ResolveUsingTypeContext (context);
+				} else {
+					type = ResolveInAllAssemblies(context);
 				}
 			}
-
 			return type ?? new UnknownType(fullTypeName);
 		}
 		

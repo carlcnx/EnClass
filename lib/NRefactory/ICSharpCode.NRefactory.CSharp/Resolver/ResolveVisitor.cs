@@ -809,10 +809,11 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 		{
 			CSharpResolver oldResolver = resolver;
 			try {
-				IMember member;
+				IMember member = null;
 				if (unresolvedFile != null) {
 					member = GetMemberFromLocation(memberDeclaration);
-				} else {
+				}
+				if (member == null) {
 					// Re-discover the method:
 					SymbolKind symbolKind = memberDeclaration.SymbolKind;
 					var parameterTypes = TypeSystemConvertVisitor.GetParameterTypes(memberDeclaration.GetChildrenByRole(Roles.Parameter), InterningProvider.Dummy);
@@ -1729,8 +1730,10 @@ namespace ICSharpCode.NRefactory.CSharp.Resolver
 			IType resultType;
 			switch (undocumentedExpression.UndocumentedExpressionType) {
 				case UndocumentedExpressionType.ArgListAccess:
-				case UndocumentedExpressionType.ArgList:
 					resultType = resolver.Compilation.FindType(typeof(RuntimeArgumentHandle));
+					break;
+				case UndocumentedExpressionType.ArgList:
+					resultType = SpecialType.ArgList;
 					break;
 				case UndocumentedExpressionType.RefValue:
 					var tre = undocumentedExpression.Arguments.ElementAtOrDefault(1) as TypeReferenceExpression;
