@@ -149,7 +149,7 @@ namespace EnClass.AssemblyCSharpImport
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine($"{ex.GetType()} {ex.Message}");
+				Debug.WriteLine($"{ex.GetType()} in {fileName}: {ex.Message}");
 				return false;
 			}
 			finally
@@ -319,6 +319,10 @@ namespace EnClass.AssemblyCSharpImport
 		{
 			foreach (ConstructorDeclaration cp in tp.Descendants.OfType<ConstructorDeclaration>())
 			{
+				// Skip subclass
+				if (type.Name != cp.Name)
+					continue;
+
 				Constructor cons = type.AddConstructor();
 
 				cons.Name = cp.Name;

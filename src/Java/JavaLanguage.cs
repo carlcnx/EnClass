@@ -289,17 +289,17 @@ namespace EnClass.Java
 		{
 			if (operation.IsAbstract) {
 				if (operation.IsStatic) {
-					throw new BadSyntaxException(string.Format(
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "abstract", "static"));
 				}
 				if (operation.IsSealed) {
-					throw new BadSyntaxException(string.Format(
+					throw new BadSyntaxException(operation + " - " + string.Format(
 					Strings.ErrorInvalidModifierCombination, "sealed", "abstract"));
 				}
 			}
 
 			if (operation.Access == AccessModifier.Private && operation.IsAbstract) {
-				throw new BadSyntaxException(string.Format(
+				throw new BadSyntaxException(operation + " - " + string.Format(
 					Strings.ErrorInvalidModifierCombination, "private", "abstract"));
 			}
 
@@ -318,7 +318,7 @@ namespace EnClass.Java
 		protected override void ValidateField(Field field)
 		{
 			if (field.IsReadonly && field.IsVolatile) {
-				throw new BadSyntaxException(string.Format(
+				throw new BadSyntaxException(field + " - " + string.Format(
 					Strings.ErrorInvalidModifierCombination, "volatile", "readonly"));
 			}
 		}
@@ -386,7 +386,7 @@ namespace EnClass.Java
 				return base.GetValidName(validName, isGenericName);
 			}
 			else {
-				throw new BadSyntaxException(Strings.ErrorInvalidName);
+				throw new BadSyntaxException(name + " - " + Strings.ErrorInvalidName);
 			}			
 		}
 

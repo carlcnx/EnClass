@@ -44,7 +44,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value != null && value != "~" + GetNameWithoutGeneric(Parent.Name))
-					throw new BadSyntaxException(Strings.ErrorDestructorName);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorDestructorName);
 			}
 		}
 
@@ -89,7 +89,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value)
-					throw new BadSyntaxException(Strings.ErrorCannotSetModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorCannotSetModifier);
 			}
 		}
 
@@ -121,7 +121,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value)
-					throw new BadSyntaxException(Strings.ErrorCannotSetModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorCannotSetModifier);
 			}
 		}
 

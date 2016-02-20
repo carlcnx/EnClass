@@ -67,7 +67,7 @@ namespace EnClass.Java
 			set
 			{
 				if (value == "void")
-					throw new BadSyntaxException(string.Format(Strings.ErrorType, "void"));
+					throw new BadSyntaxException(value + " - " + string.Format(Strings.ErrorType, "void"));
 
 				base.Type = value;
 			}
@@ -120,11 +120,11 @@ namespace EnClass.Java
 					Group initGroup = match.Groups["initvalue"];
 
 					if (JavaLanguage.Instance.IsForbiddenName(nameGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidName);
 					if (JavaLanguage.Instance.IsForbiddenTypeName(typeGroup.Value))
 						throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
 					if (typeGroup.Value == "void")
-						throw new BadSyntaxException(string.Format(Strings.ErrorType, "void"));
+						throw new BadSyntaxException(declaration + " - " + string.Format(Strings.ErrorType, "void"));
 
 					ValidName = nameGroup.Value;
 					ValidType = typeGroup.Value;

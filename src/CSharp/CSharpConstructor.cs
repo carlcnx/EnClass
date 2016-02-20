@@ -54,7 +54,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value != null && value != GetNameWithoutGeneric(Parent.Name))
-					throw new BadSyntaxException(Strings.ErrorConstructorName);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorConstructorName);
 			}
 		}
 
@@ -94,7 +94,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value && HasParameter)
-					throw new BadSyntaxException(Strings.ErrorStaticConstructor);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorStaticConstructor);
 
 				try {
 					RaiseChangedEvent = false;
@@ -121,7 +121,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value)
-					throw new BadSyntaxException(Strings.ErrorCannotSetModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorCannotSetModifier);
 			}
 		}
 
@@ -152,7 +152,7 @@ namespace EnClass.CSharp
 					IsStatic = staticGroup.Success;
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorInvalidDeclaration);
+					throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidDeclaration);
 				}
 			}
 			finally {

@@ -77,7 +77,7 @@ namespace EnClass.Core
 			set
 			{
 				if (!Language.IsValidModifier(value))
-					throw new BadSyntaxException(Strings.ErrorInvalidModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidModifier);
 
 				if (access != value) {
 					access = value;

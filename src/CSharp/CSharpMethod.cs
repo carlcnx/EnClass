@@ -93,7 +93,7 @@ namespace EnClass.CSharp
 					try {
 						string name = match.Groups["name"].Value;
 						if (Language.IsForbiddenName(name))
-							throw new BadSyntaxException(Strings.ErrorForbiddenName);
+							throw new BadSyntaxException(name + " - " + Strings.ErrorForbiddenName);
 
 						ValidName = name;
 						isOperator = match.Groups["operator"].Success;
@@ -115,7 +115,7 @@ namespace EnClass.CSharp
 					}
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorInvalidName);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidName);
 				}
 			}
 		}
@@ -135,11 +135,11 @@ namespace EnClass.CSharp
 					if (string.IsNullOrEmpty(value))
 						ValidType = value;
 					else
-						throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
+						throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidTypeName);
 				}
 				else {
 					if (string.IsNullOrEmpty(value))
-						throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
+						throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidTypeName);
 					else
 						base.Type = value;
 				}
@@ -163,15 +163,15 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value != AccessModifier.Default && IsExplicitImplementation) {
-					throw new BadSyntaxException(
+					throw new BadSyntaxException(value + " - " +
 						Strings.ErrorExplicitImplementationAccess);
 				}
 				if (value != AccessModifier.Public && IsOperator) {
-					throw new BadSyntaxException(
+					throw new BadSyntaxException(value + " - " +
 						Strings.ErrorOperatorMustBePublic);
 				}
 				if (value != AccessModifier.Default && Parent is InterfaceType) {
-					throw new BadSyntaxException(
+					throw new BadSyntaxException(value + " - " +
 						Strings.ErrorInterfaceMemberAccess);
 				}
 
@@ -210,7 +210,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (!value && IsOperator)
-					throw new BadSyntaxException(Strings.ErrorOperatorMustBeStatic);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorOperatorMustBeStatic);
 
 				base.IsStatic = value;
 			}
@@ -296,9 +296,9 @@ namespace EnClass.CSharp
 					Group argsGroup = match.Groups["args"];
 
 					if (CSharpLanguage.Instance.IsForbiddenName(nameGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidName);
 					if (CSharpLanguage.Instance.IsForbiddenTypeName(typeGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidTypeName);
 
 					ValidName = nameGroup.Value;
 					ValidType = typeGroup.Value;
@@ -333,7 +333,7 @@ namespace EnClass.CSharp
 					}
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorInvalidDeclaration);
+					throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidDeclaration);
 				}
 			}
 			finally {

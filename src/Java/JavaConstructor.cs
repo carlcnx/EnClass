@@ -54,7 +54,7 @@ namespace EnClass.Java
 			set
 			{
 				if (value != null && value != GetNameWithoutGeneric(Parent.Name))
-					throw new BadSyntaxException(Strings.ErrorConstructorName);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorConstructorName);
 			}
 		}
 
@@ -86,7 +86,7 @@ namespace EnClass.Java
 			set
 			{
 				if (value)
-					throw new BadSyntaxException(Strings.ErrorCannotSetModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorCannotSetModifier);
 			}
 		}
 
@@ -115,8 +115,7 @@ namespace EnClass.Java
 						ArgumentList.InitFromString(argsGroup.Value);
 					}
 					catch (BadSyntaxException ex) {
-						throw new BadSyntaxException(
-							Strings.ErrorInvalidDeclaration, ex);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidDeclaration, ex);
 					}
 				}
 				else {

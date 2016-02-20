@@ -68,7 +68,7 @@ namespace EnClass.Java
 				if (value != AccessModifier.Default && value != AccessModifier.Public &&
 					Parent is InterfaceType)
 				{
-					throw new BadSyntaxException(Strings.ErrorInterfaceMemberAccess);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInterfaceMemberAccess);
 				}
 
 				base.AccessModifier = value;
@@ -103,7 +103,7 @@ namespace EnClass.Java
 			set
 			{
 				if (value)
-					throw new BadSyntaxException(Strings.ErrorInvalidModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidModifier);
 			}
 		}
 
@@ -151,9 +151,9 @@ namespace EnClass.Java
 					Group argsGroup = match.Groups["args"];
 
 					if (JavaLanguage.Instance.IsForbiddenName(nameGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidName);
 					if (JavaLanguage.Instance.IsForbiddenTypeName(typeGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidTypeName);
 					ValidName = nameGroup.Value;
 					ValidType = typeGroup.Value;
 

@@ -45,19 +45,19 @@ namespace EnClass.CSharp
 		{
 		}
 
-        /// <exception cref="ReservedNameException">
-        /// The parameter name is already exists.
-        /// </exception>
-        public override Parameter Add(string name, string type, ParameterModifier modifier, string defaultValue)
-        {
-            if (IsReservedName(name))
-                throw new ReservedNameException(name);
+				/// <exception cref="ReservedNameException">
+				/// The parameter name is already exists.
+				/// </exception>
+				public override Parameter Add(string name, string type, ParameterModifier modifier, string defaultValue)
+				{
+						if (IsReservedName(name))
+								throw new ReservedNameException(name);
 
-            Parameter parameter = new CSharpParameter(name, type, modifier, defaultValue);
-            InnerList.Add(parameter);
+						Parameter parameter = new CSharpParameter(name, type, modifier, defaultValue);
+						InnerList.Add(parameter);
 
-            return parameter;
-        }
+						return parameter;
+				}
 
 		/// <exception cref="BadSyntaxException">
 		/// The <paramref name="declaration"/> does not fit to the syntax.
@@ -87,8 +87,7 @@ namespace EnClass.CSharp
 			}
 			else
 			{
-				throw new BadSyntaxException(
-					Strings.ErrorInvalidParameterDeclaration);
+				throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidParameterDeclaration);
 			}
 		}
 
@@ -123,8 +122,7 @@ namespace EnClass.CSharp
 			}
 			else
 			{
-				throw new BadSyntaxException(
-					Strings.ErrorInvalidParameterDeclaration);
+				throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidParameterDeclaration);
 			}
 		}
 
@@ -177,7 +175,7 @@ namespace EnClass.CSharp
 					if (defvalGroup.Success)
 						optionalPart = true;
 					else if (optionalPart)
-						throw new BadSyntaxException(Strings.ErrorInvalidParameterDeclaration);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidParameterDeclaration);
 
 					InnerList.Add(new CSharpParameter(nameGroup.Value, typeGroup.Value,
 						ParseParameterModifier(modifierGroup.Value), defvalGroup.Value));

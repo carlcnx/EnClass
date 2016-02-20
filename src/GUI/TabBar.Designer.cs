@@ -44,9 +44,9 @@
 			// contextMenu
 			// 
 			this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuClose,
-            this.mnuCloseAll,
-            this.mnuCloseAllButThis});
+						this.mnuClose,
+						this.mnuCloseAll,
+						this.mnuCloseAllButThis});
 			this.contextMenu.Name = "contextMenu";
 			this.contextMenu.Size = new System.Drawing.Size(167, 70);
 			this.contextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenu_Opening);

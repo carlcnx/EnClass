@@ -113,7 +113,7 @@ namespace EnClass.Core
 					Changed();
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorAccessorModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorAccessorModifier);
 				}
 			}
 		}
@@ -139,7 +139,7 @@ namespace EnClass.Core
 					Changed();
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorAccessorModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorAccessorModifier);
 				}
 			}
 		}

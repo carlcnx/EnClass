@@ -182,7 +182,7 @@ namespace EnClass.Core
 		public virtual string GetValidName(string name, bool isGenericName)
 		{
 			if (IsForbiddenName(name))
-				throw new BadSyntaxException(Strings.ErrorForbiddenName);
+				throw new BadSyntaxException(name + " - " + Strings.ErrorForbiddenName);
 
 			return name;
 		}

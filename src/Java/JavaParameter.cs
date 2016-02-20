@@ -41,8 +41,7 @@ namespace EnClass.Java
 			protected set
 			{
 				if (value == "void") {
-					throw new BadSyntaxException(
-						Strings.ErrorInvalidParameterDeclaration);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidParameterDeclaration);
 				}
 				base.Type = value;
 			}

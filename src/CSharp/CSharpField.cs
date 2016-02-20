@@ -68,7 +68,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value == "void")
-					throw new BadSyntaxException(string.Format(Strings.ErrorType, "void"));
+					throw new BadSyntaxException(value + " - " + string.Format(Strings.ErrorType, "void"));
 
 				base.Type = value;
 			}
@@ -122,9 +122,9 @@ namespace EnClass.CSharp
 					Group initGroup = match.Groups["initvalue"];
 
 					if (CSharpLanguage.Instance.IsForbiddenName(nameGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidName);
 					if (CSharpLanguage.Instance.IsForbiddenTypeName(typeGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidTypeName);
 					if (typeGroup.Value == "void")
 						throw new BadSyntaxException(string.Format(Strings.ErrorType, "void"));
 
@@ -147,7 +147,7 @@ namespace EnClass.CSharp
 					}
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorInvalidDeclaration);
+					throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidDeclaration);
 				}
 			}
 			finally {

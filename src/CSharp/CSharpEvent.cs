@@ -83,7 +83,7 @@ namespace EnClass.CSharp
 					}
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorInvalidName);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidName);
 				}
 			}
 		}
@@ -109,8 +109,7 @@ namespace EnClass.CSharp
 						Strings.ErrorExplicitImplementationAccess);
 				}
 				if (value != AccessModifier.Default && Parent is InterfaceType) {
-					throw new BadSyntaxException(
-						Strings.ErrorInterfaceMemberAccess);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInterfaceMemberAccess);
 				}
 
 				base.AccessModifier = value;
@@ -180,7 +179,7 @@ namespace EnClass.CSharp
 					Group nameDotGroup = match.Groups["namedot"];
 
 					if (CSharpLanguage.Instance.IsForbiddenName(nameGroup.Value))
-						throw new BadSyntaxException(Strings.ErrorInvalidName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidName);
 					if (CSharpLanguage.Instance.IsForbiddenTypeName(typeGroup.Value))
 						throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
 

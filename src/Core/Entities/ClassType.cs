@@ -51,9 +51,9 @@ namespace EnClass.Core
 			{
 				if (modifier != value) {
 					if (value == ClassModifier.Static && (IsSuperClass || HasExplicitBase))
-						throw new BadSyntaxException(Strings.ErrorInvalidModifier);
+						throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidModifier);
 					if (value == ClassModifier.Sealed && IsSuperClass)
-						throw new BadSyntaxException(Strings.ErrorInvalidModifier);
+						throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidModifier);
 
 					modifier = value;
 					Changed();

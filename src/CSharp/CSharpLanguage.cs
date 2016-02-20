@@ -33,7 +33,7 @@ namespace EnClass.CSharp
 		internal const string DeclarationEnding = @"\s*(;\s*)?$";
 
 		// System.String
-		private const string TypeNamePattern = InitialChar + @"(\w|\." + InitialChar + @")*";
+		private const string TypeNamePattern = InitialChar + @"(\w|\.|::" + InitialChar + @")*";
 
 		// [,][][,,]
 		private const string ArrayPattern = @"(\s*\[\s*(,\s*)*\])*";
@@ -44,15 +44,15 @@ namespace EnClass.CSharp
 		// <System.String[], System.String[]>
 		private const string GenericPattern =
 			@"<\s*" + BaseTypePattern + @"(\s*,\s*" + BaseTypePattern + @")*\s*>";
-		
+
 		// System.Collections.Generic.List<System.String[], System.String[]>[]
 		internal const string GenericTypePattern =
 			TypeNamePattern + @"(\s*" + GenericPattern + ")?" + ArrayPattern;
-		
+
 		// <List<int>[], List<string>>
 		private const string GenericPattern2 =
 			@"<\s*" + GenericTypePattern + @"(\s*,\s*" + GenericTypePattern + @")*\s*>";
-		
+
 		// System.Collections.Generic.List<List<int>[]>[]
 		internal const string GenericTypePattern2 =
 			TypeNamePattern + @"(\s*" + GenericPattern2 + @")?\??" + ArrayPattern;
@@ -60,11 +60,11 @@ namespace EnClass.CSharp
 
 		// Name
 		internal const string NamePattern = InitialChar + @"\w*";
-		
+
 		// <T, K>
 		private const string BaseGenericPattern =
 			@"<\s*" + NamePattern + @"(\s*,\s*" + NamePattern + @")*\s*>";
-		
+
 		// Name<T>
 		internal const string GenericNamePattern =
 			NamePattern + @"(\s*" + BaseGenericPattern + ")?";
@@ -102,14 +102,14 @@ namespace EnClass.CSharp
 		static Regex typeRegex = new Regex(ClosedTypePattern, RegexOptions.ExplicitCapture);
 
 		static readonly string[] reservedNames = {
-			"abstract", "as", "base", "break", "case", "catch", "checked", "class", 
-			"const", "continue", "default", "delegate", "do", "else", "enum", "event", 
-			"explicit", "extern", "false", "finally", "fixed", "for", "foreach", "goto", 
+			"abstract", "as", "base", "break", "case", "catch", "checked", "class",
+			"const", "continue", "default", "delegate", "do", "else", "enum", "event",
+			"explicit", "extern", "false", "finally", "fixed", "for", "foreach", "goto",
 			"if", "implicit", "in", "interface", "internal", "is", "lock", "namespace",
 			"new", "null", "operator", "out", "override", "params", "private",
 			"protected", "public", "readonly", "ref", "return", "sealed", "sizeof",
 			"stackalloc", "static", "struct", "switch", "this", "throw", "true", "try",
-			"typeof", "unchecked", "unsafe", "using", "virtual", "volatile", "while"			
+			"typeof", "unchecked", "unsafe", "using", "virtual", "volatile", "while"
 		};
 		static readonly string[] typeKeywords = {
 			"bool", "byte", "char", "decimal", "double", "float", "int", "long",
@@ -265,64 +265,79 @@ namespace EnClass.CSharp
 
 		private static void ValidateOperationModifiers(Operation operation)
 		{
-			if (operation.IsStatic) {
-				if (operation.IsVirtual) {
-					throw new BadSyntaxException(string.Format(
+			if (operation.IsStatic)
+			{
+				if (operation.IsVirtual)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "virtual", "static"));
 				}
-				if (operation.IsAbstract) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsAbstract)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "abstract", "static"));
 				}
-				if (operation.IsOverride) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsOverride)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "override", "static"));
 				}
-				if (operation.IsSealed) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsSealed)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "sealed", "static"));
 				}
 			}
 
-			if (operation.IsVirtual) {
-				if (operation.IsAbstract) {
-					throw new BadSyntaxException(string.Format(
+			if (operation.IsVirtual)
+			{
+				if (operation.IsAbstract)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "abstract", "virtual"));
 				}
-				if (operation.IsOverride) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsOverride)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "override", "virtual"));
 				}
-				if (operation.IsSealed) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsSealed)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "sealed", "virtual"));
 				}
 			}
 
-			if (operation.IsHider) {
-				if (operation.IsOverride) {
-					throw new BadSyntaxException(string.Format(
+			if (operation.IsHider)
+			{
+				if (operation.IsOverride)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "new", "override"));
 				}
-				if (operation.IsSealed) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsSealed)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "new", "sealed"));
 				}
 			}
 
-			if (operation.IsSealed) {
-				if (operation.IsAbstract) {
-					throw new BadSyntaxException(string.Format(
+			if (operation.IsSealed)
+			{
+				if (operation.IsAbstract)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "sealed", "abstract"));
 				}
 				if (!operation.IsOverride)
 					operation.IsOverride = true;
 			}
 
-			if (operation.IsAbstract) {
+			if (operation.IsAbstract)
+			{
 				ClassType parent = operation.Parent as ClassType;
 				if (parent == null)
-					throw new BadSyntaxException(Strings.ErrorInvalidModifier);
+					throw new BadSyntaxException(operation + " - " + Strings.ErrorInvalidModifier);
 				else
 					parent.Modifier = ClassModifier.Abstract;
 			}
@@ -337,21 +352,26 @@ namespace EnClass.CSharp
 					Strings.ErrorInterfaceMemberAccess);
 			}
 
-			if (operation.Access == AccessModifier.Private) {
-				if (operation.IsVirtual) {
-					throw new BadSyntaxException(string.Format(
+			if (operation.Access == AccessModifier.Private)
+			{
+				if (operation.IsVirtual)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "private", "virtual"));
 				}
-				if (operation.IsAbstract) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsAbstract)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "private", "abstract"));
 				}
-				if (operation.IsOverride) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsOverride)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "private", "override"));
 				}
-				if (operation.IsSealed) {
-					throw new BadSyntaxException(string.Format(
+				if (operation.IsSealed)
+				{
+					throw new BadSyntaxException(operation + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "private", "sealed"));
 				}
 			}
@@ -362,22 +382,27 @@ namespace EnClass.CSharp
 		/// </exception>
 		protected override void ValidateField(Field field)
 		{
-			if (field.IsConstant) {
-				if (field.IsStatic) {
-					throw new BadSyntaxException(string.Format(
+			if (field.IsConstant)
+			{
+				if (field.IsStatic)
+				{
+					throw new BadSyntaxException(field + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "static", "const"));
 				}
-				if (field.IsReadonly) {
-					throw new BadSyntaxException(string.Format(
+				if (field.IsReadonly)
+				{
+					throw new BadSyntaxException(field + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "readonly", "const"));
 				}
-				if (field.IsVolatile) {
-					throw new BadSyntaxException(string.Format(
+				if (field.IsVolatile)
+				{
+					throw new BadSyntaxException(field + " - " + string.Format(
 						Strings.ErrorInvalidModifierCombination, "volatile", "const"));
 				}
 			}
-			if (field.IsReadonly && field.IsVolatile) {
-				throw new BadSyntaxException(string.Format(
+			if (field.IsReadonly && field.IsVolatile)
+			{
+				throw new BadSyntaxException(field + " - " + string.Format(
 					Strings.ErrorInvalidModifierCombination, "volatile", "readonly"));
 			}
 		}
@@ -403,9 +428,10 @@ namespace EnClass.CSharp
 			newOperation.ClearModifiers();
 			newOperation.IsStatic = false;
 
-			if (explicitly) {
+			if (explicitly)
+			{
 				newOperation.Name = string.Format("{0}.{1}",
-					((InterfaceType) operation.Parent).Name, newOperation.Name);
+					((InterfaceType)operation.Parent).Name, newOperation.Name);
 			}
 
 			return newOperation;
@@ -444,13 +470,14 @@ namespace EnClass.CSharp
 		{
 			Match match = (isGenericName ? genericNameRegex.Match(name) : nameRegex.Match(name));
 
-			if (match.Success) {
+			if (match.Success)
+			{
 				string validName = match.Groups["name"].Value;
 				return base.GetValidName(validName, isGenericName);
 			}
 			else {
-				throw new BadSyntaxException(Strings.ErrorInvalidName);
-			}			
+				throw new BadSyntaxException(name + " - " + Strings.ErrorInvalidName);
+			}
 		}
 
 		/// <exception cref="BadSyntaxException">
@@ -460,13 +487,14 @@ namespace EnClass.CSharp
 		{
 			Match match = typeRegex.Match(name);
 
-			if (match.Success) {
+			if (match.Success)
+			{
 				string validName = match.Groups["type"].Value;
 				return base.GetValidTypeName(validName);
 			}
 			else {
-				throw new BadSyntaxException(Strings.ErrorInvalidTypeName);
-			}			
+				throw new BadSyntaxException(name + " - " + Strings.ErrorInvalidTypeName);
+			}
 		}
 
 		public override AccessModifier TryParseAccessModifier(string value)
@@ -487,7 +515,8 @@ namespace EnClass.CSharp
 
 		public override string GetAccessString(AccessModifier access, bool forCode)
 		{
-			switch (access) {
+			switch (access)
+			{
 				case AccessModifier.ProtectedInternal:
 					if (forCode)
 						return "protected internal";
@@ -510,7 +539,8 @@ namespace EnClass.CSharp
 
 		public override string GetFieldModifierString(FieldModifier modifier, bool forCode)
 		{
-			if (modifier == FieldModifier.None) {
+			if (modifier == FieldModifier.None)
+			{
 				if (forCode)
 					return "";
 				else
@@ -539,7 +569,8 @@ namespace EnClass.CSharp
 
 		public override string GetOperationModifierString(OperationModifier modifier, bool forCode)
 		{
-			if (modifier == OperationModifier.None) {
+			if (modifier == OperationModifier.None)
+			{
 				if (forCode)
 					return "";
 				else
@@ -585,7 +616,7 @@ namespace EnClass.CSharp
 
 		protected override StructureType CreateStructure()
 		{
-	        return new CSharpStructure();
+			return new CSharpStructure();
 		}
 
 		protected override InterfaceType CreateInterface()

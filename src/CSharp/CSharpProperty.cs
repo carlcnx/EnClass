@@ -114,7 +114,7 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value == "void")
-					throw new BadSyntaxException(string.Format(Strings.ErrorType, "void"));
+					throw new BadSyntaxException(value + " - " + string.Format(Strings.ErrorType, "void"));
 
 				base.Type = value;
 			}
@@ -158,12 +158,10 @@ namespace EnClass.CSharp
 			set
 			{
 				if (value != AccessModifier.Default && IsExplicitImplementation) {
-					throw new BadSyntaxException(
-						Strings.ErrorExplicitImplementationAccess);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorExplicitImplementationAccess);
 				}
 				if (value != AccessModifier.Default && Parent is InterfaceType) {
-					throw new BadSyntaxException(
-						Strings.ErrorInterfaceMemberAccess);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInterfaceMemberAccess);
 				}
 
 				base.AccessModifier = value;
@@ -192,7 +190,7 @@ namespace EnClass.CSharp
 			{
 				if (isExplicitImplementation != value) {
 					if (value && !(Parent is IInterfaceImplementer))
-						throw new BadSyntaxException(Strings.ErrorExplicitImplementation);
+						throw new BadSyntaxException(value + " - " + Strings.ErrorExplicitImplementation);
 
 					try {
 						RaiseChangedEvent = false;
@@ -243,7 +241,7 @@ namespace EnClass.CSharp
 					// Validating identifier's name
 					if ((nameGroup.Value != "this" || !HasParameter) &&
 						CSharpLanguage.Instance.IsForbiddenName(nameGroup.Value)) {
-						throw new BadSyntaxException(Strings.ErrorInvalidName);
+						throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidName);
 					}
 					else {
 						ValidName = nameGroup.Value;
@@ -278,7 +276,7 @@ namespace EnClass.CSharp
 					}
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorInvalidDeclaration);
+					throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidDeclaration);
 				}
 			}
 			finally {

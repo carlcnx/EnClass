@@ -43,7 +43,7 @@ namespace EnClass.CSharp
 			{
 				if (value == "void")
 				{
-					throw new BadSyntaxException(Strings.ErrorInvalidParameterDeclaration);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidParameterDeclaration);
 				}
 				base.Type = value;
 			}
@@ -75,7 +75,7 @@ namespace EnClass.CSharp
 			{
 				if (!string.IsNullOrWhiteSpace(value) && Modifier != ParameterModifier.In)
 				{
-					throw new BadSyntaxException(Strings.ErrorInvalidParameterDeclaration);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorInvalidParameterDeclaration);
 				}
 				base.DefaultValue = value;
 			}

@@ -71,7 +71,7 @@ namespace EnClass.Core
 			set
 			{
 				if (value != null)
-					throw new BadSyntaxException(Strings.ErrorCannotSetType);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorCannotSetType);
 			}
 		}
 
@@ -97,7 +97,7 @@ namespace EnClass.Core
 			set
 			{
 				if (value)
-					throw new BadSyntaxException(Strings.ErrorCannotSetStatic);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorCannotSetStatic);
 			}
 		}
 
@@ -129,7 +129,7 @@ namespace EnClass.Core
 			set
 			{
 				if (value)
-					throw new BadSyntaxException(Strings.ErrorCannotSetModifier);
+					throw new BadSyntaxException(value + " - " + Strings.ErrorCannotSetModifier);
 			}
 		}
 	}

@@ -57,21 +57,21 @@ namespace EnClass.CSharp
 					Group valueGroup = match.Groups["value"];
 
 					Name = nameGroup.Value;
-				  if (valueGroup.Success)
-          {
-            int intValue;
-            if(int.TryParse(valueGroup.Value, out intValue))
-              initValue = intValue;
-            else
-              initValue = null;
-          }
-          else
-          {
-            initValue = null;
-          }
+					if (valueGroup.Success)
+					{
+						int intValue;
+						if(int.TryParse(valueGroup.Value, out intValue))
+							initValue = intValue;
+						else
+							initValue = null;
+					}
+					else
+					{
+						initValue = null;
+					}
 				}
 				else {
-					throw new BadSyntaxException(Strings.ErrorInvalidDeclaration);
+					throw new BadSyntaxException(declaration + " - " + Strings.ErrorInvalidDeclaration);
 				}
 			}
 			finally {
@@ -81,12 +81,12 @@ namespace EnClass.CSharp
 
 		public override string GetDeclaration()
 		{
-		  if (InitValue == null)
+			if (InitValue == null)
 				return Name;
-		  return Name + " = " + InitValue;
+			return Name + " = " + InitValue;
 		}
 
-	  protected override EnumValue Clone()
+		protected override EnumValue Clone()
 		{
 			return new CSharpEnumValue(GetDeclaration());
 		}
