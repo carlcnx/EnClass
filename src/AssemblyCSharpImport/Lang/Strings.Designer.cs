@@ -196,9 +196,7 @@ namespace EnClass.AssemblyCSharpImport.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error(s) in the C# source code file {0} :
-        ///
-        ///{1}.
+        ///   Looks up a localized string similar to Error(s) in C# source code file {0}:{1} : {2}.
         /// </summary>
         internal static string Error_CSharpParsing {
             get {

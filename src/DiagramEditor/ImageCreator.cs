@@ -22,6 +22,7 @@ using System.Windows.Forms;
 using EnClass.Translations;
 using System.IO;
 using EnClass.DiagramEditor.ClassDiagram;
+using System.Diagnostics;
 
 namespace EnClass.DiagramEditor
 {
@@ -191,10 +192,7 @@ namespace EnClass.DiagramEditor
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show(
-						string.Format("{0}\n{1}: {2}", Strings.ErrorInSavingImage,
-							Strings.ErrorsReason, ex.Message),
-						Strings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					Debug.WriteLine($"{Strings.ErrorInSavingImage} {Strings.ErrorsReason} {ex.GetType()} {ex.Message}");
 				}
 				finally
 				{
@@ -239,10 +237,7 @@ namespace EnClass.DiagramEditor
 					}
 					catch (Exception ex)
 					{
-						MessageBox.Show(
-							string.Format("{0}\n{1}: {2}", Strings.ErrorInSavingImage,
-								Strings.ErrorsReason, ex.Message),
-							Strings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+						Debug.WriteLine($"{Strings.ErrorInSavingImage} {Strings.ErrorsReason} {ex.GetType()} {ex.Message}");
 					}
 				}
 			}
